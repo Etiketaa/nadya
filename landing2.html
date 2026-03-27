@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadya Arrieta | Escuela de Uñas (Diseño 2)</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* L2 Specific Styles (Modern Split Asymmetrical Light/Cream Theme) */
+        body {
+            background: var(--crema);
+            color: var(--texto-oscuro);
+        }
+
+        /* Custom Light Nav */
+        nav.scrolled {
+            background: rgba(248, 245, 239, 0.9);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        nav.scrolled .logo,
+        nav.scrolled .nav-links a {
+            color: var(--esmeralda-dark);
+        }
+
+        nav.scrolled .nav-links a:hover {
+            color: var(--turquesa);
+        }
+
+        .hero-split {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-split-text {
+            padding: 15vh 8% 8vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: var(--crema);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-split-image {
+            position: relative;
+            background: var(--esmeralda-deep);
+            clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .hero-split-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            mix-blend-mode: luminosity;
+        }
+
+        .hero-split-text h1 {
+            font-size: clamp(3rem, 6vw, 6rem);
+            color: var(--esmeralda-deep);
+            line-height: 1.05;
+            margin-bottom: 24px;
+            font-weight: 300;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .hero-split-text h1 span {
+            color: var(--turquesa);
+            font-style: italic;
+        }
+
+        .hero-split-text p {
+            font-size: 1.1rem;
+            color: var(--texto-medio);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .hero-stats-l2 {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .stat-l2 {
+            text-align: left;
+        }
+
+        .stat-num-l2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--turquesa);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .stat-label-l2 {
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--texto-medio);
+        }
+
+        /* Floating Video Promo */
+        .floating-video {
+            position: absolute;
+            bottom: -50px;
+            right: 10%;
+            width: 300px;
+            aspect-ratio: 9/16;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            border: 4px solid var(--crema);
+        }
+
+        .floating-video iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 992px) {
+            .hero-split {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-split-image {
+                height: 40vh;
+                clip-path: none;
+                order: -1;
+            }
+
+            .floating-video {
+                display: none;
+            }
+
+            nav.scrolled {
+                background: var(--crema);
+            }
+
+            .logo {
+                color: var(--esmeralda-dark);
+            }
+        }
+
+        /* Minimalist Courses */
+        .courses-clean {
+            padding: 100px 5%;
+            background: var(--blanco);
+        }
+
+        .section-title-clean {
+            text-align: left;
+            margin-bottom: 60px;
+            max-width: 600px;
+        }
+
+        .section-title-clean h2 {
+            font-size: 3.5rem;
+            color: var(--esmeralda-dark);
+            line-height: 1;
+        }
+
+        .section-title-clean span {
+            font-size: 0.8rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--turquesa);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .pack-l2 {
+            background: var(--crema);
+            border: 1px solid rgba(13, 107, 80, 0.1);
+            border-radius: 16px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pack-l2::before {
+            content: '';
+            position: absolute;
+            right: -50px;
+            top: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(26, 170, 133, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .pack-l2-info h3 {
+            font-size: 2.2rem;
+            color: var(--esmeralda-deep);
+            margin-bottom: 8px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .pack-l2-info p {
+            color: var(--texto-medio);
+            margin-bottom: 16px;
+            font-size: 1rem;
+            max-width: 400px;
+        }
+
+        .pack-l2-badge {
+            display: inline-block;
+            background: var(--esmeralda-deep);
+            color: #fff;
+            font-size: 0.7rem;
+            padding: 4px 12px;
+            border-radius: 4px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .pack-l2-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: var(--turquesa);
+            line-height: 1;
+        }
+
+        .course-list {
+            display: grid;
+            gap: 24px;
+        }
+
+        .course-row {
+            display: grid;
+            grid-template-columns: auto 1fr auto auto;
+            gap: 30px;
+            align-items: center;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(13, 107, 80, 0.1);
+            transition: all 0.3s;
+            background: var(--crema);
+        }
+
+        .course-row:hover {
+            transform: translateX(10px);
+            background: var(--blanco);
+            box-shadow: 0 10px 40px rgba(13, 107, 80, 0.08);
+            border-color: var(--turquesa-light);
+        }
+
+        .cr-badge {
+            background: var(--esmeralda-deep);
+            color: var(--oro);
+            padding: 4px 16px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .cr-title {
+            font-size: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--esmeralda-dark);
+            margin-bottom: 4px;
+        }
+
+        .cr-desc {
+            font-size: 0.9rem;
+            color: var(--texto-medio);
+        }
+
+        .cr-price {
+            font-size: 1.5rem;
+            font-weight: 600;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--turquesa);
+        }
+
+        @media (max-width: 768px) {
+            .course-row {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .cr-badge {
+                justify-self: center;
+            }
+
+            .pack-l2 {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+
+            .pack-l2-info p {
+                margin: 0 auto 16px;
+            }
+        }
+
+        /* Info Split L2 */
+        .info-split-l2 {
+            padding: 100px 5%;
+            background: var(--crema);
+        }
+
+        .l2-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .l2-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .step-l2 {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+
+        .step-num-l2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: rgba(13, 107, 80, 0.15);
+            line-height: 0.8;
+        }
+
+        .step-l2 h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--esmeralda-dark);
+            margin-bottom: 6px;
+        }
+
+        .step-l2 p {
+            font-size: 0.95rem;
+            color: var(--texto-medio);
+        }
+
+        .about-card-l2 {
+            background: var(--blanco);
+            border: 1px solid rgba(13, 107, 80, 0.1);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+            text-align: center;
+        }
+
+        .about-card-l2 h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            color: var(--esmeralda-deep);
+            margin-bottom: 4px;
+        }
+
+        .about-card-l2 h5 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--turquesa);
+            margin-bottom: 24px;
+        }
+
+        .about-card-l2 p {
+            font-size: 1rem;
+            color: var(--texto-medio);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .pills-l2 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .pill-l2 {
+            background: rgba(26, 170, 133, 0.1);
+            color: var(--esmeralda-dark);
+            padding: 6px 14px;
+            font-size: 0.75rem;
+            border-radius: 50px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Nav -->
+    <nav id="navbar">
+        <div class="logo" style="color: var(--esmeralda-dark);">
+            <svg viewBox="0 0 24 24" style="height:28px; fill:var(--oro);">
+                <path d="M2 19h20v2H2v-2zm18-9l-4 4-4-8-4 8-4-4-1 8h18l-1-8z" />
+            </svg>
+            Nadya Arrieta
+        </div>
+        <div class="nav-links">
+            <a href="#cursos" style="color: var(--esmeralda-dark);">Cursos</a>
+            <a href="#proceso" style="color: var(--esmeralda-dark);">Cómo Funciona</a>
+            <a href="#sobre-mi" style="color: var(--esmeralda-dark);">Sobre Mí</a>
+        </div>
+    </nav>
+
+    <!-- Split Hero -->
+    <header class="hero-split">
+        <div class="hero-split-text">
+            <h1 class="fade-in-up delay-1">Domina el<br><span>Arte de las Uñas</span></h1>
+            <p class="fade-in-up delay-2">Desde principiante hasta avanzada. Aprende con los mejores cursos en video, a
+                tu ritmo, desde donde estés.</p>
+
+            <div class="hero-stats-l2 fade-in-up delay-3">
+                <div class="stat-l2">
+                    <div class="stat-num-l2">9+</div>
+                    <div class="stat-label-l2">Cursos</div>
+                </div>
+                <div class="stat-l2">
+                    <div class="stat-num-l2">100%</div>
+                    <div class="stat-label-l2">Online</div>
+                </div>
+                <div class="stat-l2">
+                    <div class="stat-num-l2">∞</div>
+                    <div class="stat-label-l2">Acceso</div>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 16px; align-items: center;" class="fade-in-up delay-4">
+                <button class="btn btn-primary"
+                    onclick="document.getElementById('cursos').scrollIntoView({behavior: 'smooth'})">Explorar
+                    Academia</button>
+            </div>
+        </div>
+
+        <div class="hero-split-image fade-in-up">
+            <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=1000"
+                alt="Nadya trabajando">
+            <div class="floating-video">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Promocional Vertical"></iframe>
+            </div>
+        </div>
+    </header>
+
+    <!-- Courses List -->
+    <section class="courses-clean" id="cursos">
+        <div class="section-title-clean fade-in-up">
+            <span>Elige tu camino</span>
+            <h2 class="serif">Nuestros Cursos</h2>
+        </div>
+
+        <!-- Pack Promocional -->
+        <div class="pack-l2 fade-in-up delay-1">
+            <div class="pack-l2-info">
+                <span class="pack-l2-badge">★ Mejor Valor</span>
+                <h3 class="serif">Pack Completo de Uñas</h3>
+                <p>Accedé a los 9 cursos de una sola vez. De principiante a avanzada, todos incluidos con acceso
+                    inmediato y de por vida.</p>
+                <button class="btn btn-primary" onclick="openPaymentModal('Pack Completo de Uñas', '149 USD')">Comprar
+                    Pack</button>
+            </div>
+            <div style="text-align: right;">
+                <div
+                    style="text-decoration: line-through; color: var(--texto-medio); font-size: 1rem; margin-bottom: 4px;">
+                    $299 USD</div>
+                <div class="pack-l2-price">$149 USD</div>
+            </div>
+        </div>
+
+        <div class="course-list">
+            <!-- Item 1 -->
+            <div class="course-row fade-in-up delay-2">
+                <div class="cr-badge" style="background:var(--turquesa-light); color:var(--esmeralda-dark);">
+                    Principiante</div>
+                <div>
+                    <h3 class="cr-title">Uñas Básicas</h3>
+                    <p class="cr-desc">6 lecciones ideales si recién comienzas. Técnica y fundamentos.</p>
+                </div>
+                <div class="cr-price">$29 USD</div>
+                <button class="btn btn-outline" style="padding: 10px 24px;"
+                    onclick="openPaymentModal('Uñas Básicas', '29 USD')">Anotarme</button>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="course-row fade-in-up delay-3">
+                <div class="cr-badge" style="background:#8aab9c; color:#fff;">Básico</div>
+                <div>
+                    <h3 class="cr-title">Gel UV</h3>
+                    <p class="cr-desc">8 lecciones para dominar la construcción y esmaltado con Gel UV.</p>
+                </div>
+                <div class="cr-price">$35 USD</div>
+                <button class="btn btn-outline" style="padding: 10px 24px;"
+                    onclick="openPaymentModal('Gel UV', '35 USD')">Anotarme</button>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="course-row fade-in-up delay-4">
+                <div class="cr-badge" style="background:var(--turquesa); color:#fff;">Intermedio</div>
+                <div>
+                    <h3 class="cr-title">Nail Art Floral</h3>
+                    <p class="cr-desc">10 lecciones enfocadas en diseño floral, mano alzada y trazos finos.</p>
+                </div>
+                <div class="cr-price">$39 USD</div>
+                <button class="btn btn-outline" style="padding: 10px 24px;"
+                    onclick="openPaymentModal('Nail Art Floral', '39 USD')">Anotarme</button>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="course-row fade-in-up">
+                <div class="cr-badge" style="background:var(--oro); color:var(--esmeralda-deep);">Avanzado</div>
+                <div>
+                    <h3 class="cr-title">Nail Art Premium</h3>
+                    <p class="cr-desc">12 lecciones de nivel maestro. Texturas, 3D art y acabados de lujo.</p>
+                </div>
+                <div class="cr-price">$49 USD</div>
+                <button class="btn btn-outline" style="padding: 10px 24px;"
+                    onclick="openPaymentModal('Nail Art Premium', '49 USD')">Anotarme</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso & About (L2 Style) -->
+    <section class="info-split-l2">
+        <div class="l2-grid">
+            <!-- Proceso -->
+            <div id="proceso">
+                <div class="section-title-clean fade-in-up" style="margin-bottom: 40px;">
+                    <span>Simple y rápido</span>
+                    <h2 class="serif">¿Cómo funciona?</h2>
+                </div>
+                <div class="step-l2 fade-in-up delay-1">
+                    <div class="step-num-l2">01</div>
+                    <div>
+                        <h4>Elegí tu curso</h4>
+                        <p>Buscá el curso ideal según tu nivel, desde principiante hasta avanzada.</p>
+                    </div>
+                </div>
+                <div class="step-l2 fade-in-up delay-2">
+                    <div class="step-num-l2">02</div>
+                    <div>
+                        <h4>Comprá con seguridad</h4>
+                        <p>Pago seguro por transferencia bancaria. Confirmación garantizada.</p>
+                    </div>
+                </div>
+                <div class="step-l2 fade-in-up delay-3">
+                    <div class="step-num-l2">03</div>
+                    <div>
+                        <h4>Acceso inmediato</h4>
+                        <p>Recibís tu acceso al instante. Mirá los videos cuando quieras desde tu teléfono.</p>
+                    </div>
+                </div>
+                <div class="step-l2 fade-in-up delay-4">
+                    <div class="step-num-l2">04</div>
+                    <div>
+                        <h4>Aprendé y crecé</h4>
+                        <p>Seguí las clases a tu ritmo y transformá tu carrera como nail artist.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobre Mí -->
+            <div id="sobre-mi" class="fade-in-up">
+                <div class="about-card-l2">
+                    <div style="font-size: 3.5rem; margin-bottom: 16px;">👑</div>
+                    <h3>Nadya Arrieta</h3>
+                    <h5>Nail Artist & Instructora</h5>
+                    <p>Con años de experiencia en el mundo de las uñas, Nadya creó esta escuela para que cualquier
+                        persona pueda aprender desde cero y construir su propio negocio como nail artist profesional.
+                    </p>
+                    <div class="pills-l2">
+                        <span class="pill-l2">Nail Art Avanzado</span>
+                        <span class="pill-l2">Gel UV & Acrílico</span>
+                        <span class="pill-l2">Diseño Artístico</span>
+                        <span class="pill-l2">Emprendimiento</span>
+                        <span class="pill-l2">Nail Business</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shared Footer from styles.css logic -->
+    <footer style="margin-top: 0;">
+        <div class="footer-logo serif text-gold-gradient">Nadya Arrieta</div>
+        <div
+            style="font-size:0.7rem; color:rgba(255,255,255,0.4); text-transform:uppercase; letter-spacing:0.15em; margin-bottom: 20px;">
+            Escuela de Uñas Profesional</div>
+        <div class="footer-links">
+            <a href="https://instagram.com/nadyayagie" target="_blank">Instagram @nadyayagie</a>
+            <a href="#">Términos y Condiciones</a>
+        </div>
+        <p style="font-size: 0.75rem; color: rgba(255,255,255,0.4);">© 2026 Nadya Arrieta. Todos los derechos
+            reservados.</p>
+    </footer>
+
+    <!-- Modal Payment (Reused logic) -->
+    <div class="modal-overlay" id="paymentModal">
+        <div class="modal-content" style="color: var(--texto-oscuro);">
+            <button class="modal-close" onclick="closePaymentModal()">×</button>
+            <h3 class="serif" style="font-size: 2rem; color: var(--esmeralda-deep); margin-bottom: 8px;">Inscripción
+            </h3>
+            <p style="color: var(--texto-medio); margin-bottom: 24px; font-size: 0.95rem;">Programa seleccionado:
+                <strong id="modalCourseName" style="color:var(--esmeralda)">Curso</strong><br>Valor: <strong
+                    id="modalCoursePrice">precio</strong>.</p>
+
+            <div
+                style="background: var(--crema); border: 1px solid var(--esmeralda); padding: 20px; border-radius: 8px; margin-bottom: 24px;">
+                <p
+                    style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--esmeralda); margin-bottom: 12px; font-weight: 600;">
+                    Pago vía Transferencia</p>
+                <p style="font-size: 0.9rem; margin-bottom: 10px;">Transfiere con los siguientes datos y envíanos el
+                    comprobante por WhatsApp para darte acceso a las clases maestras.</p>
+
+                <div class="bank-details" style="background:#fff; padding:15px; border-radius:8px;">
+                    <p style="display:flex; justify-content:space-between; margin-bottom:8px;"><span>CBU/CVU:</span>
+                        <strong style="color:var(--esmeralda-deep)">0000003100010000123456</strong></p>
+                    <p style="display:flex; justify-content:space-between; margin-bottom:8px;"><span>Alias:</span>
+                        <strong style="color:var(--esmeralda-deep)">nadya.escuela.unas</strong></p>
+                    <p style="display:flex; justify-content:space-between; margin-bottom:8px;"><span>Titular:</span>
+                        <strong style="color:var(--esmeralda-deep)">Nadya Arrieta</strong></p>
+                    <p style="display:flex; justify-content:space-between;"><span>Banco:</span> <strong
+                            style="color:var(--esmeralda-deep)">MercadoPago</strong></p>
+                </div>
+            </div>
+
+            <a href="#" target="_blank" id="wpLink" class="btn btn-primary" style="width: 100%;">Enviar Comprobante
+                (WhatsApp)</a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
