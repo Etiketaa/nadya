@@ -4,305 +4,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nadya Arrieta | Escuela de Uñas (Diseño 2)</title>
+    <title>Nadya Arrieta | Academia de Uñas</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Specific L2 touches to maintain its style within the new system */
+        .hero-split {
+            min-height: 100vh;
+            display: flex;
+            background: var(--crema);
+        }
+
+        .hero-split-text {
+            flex: 1;
+            padding: 100px 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-split-img {
+            flex: 1;
+            background: var(--esmeralda-dark);
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        @media (max-width: 992px) {
+            .hero-split {
+                flex-direction: column;
+            }
+
+            .hero-split-img {
+                clip-path: none;
+                min-height: 400px;
+                order: -1;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- Nav -->
     <nav id="navbar">
-        <div class="logo" style="color: var(--esmeralda-dark);">
-            <svg viewBox="0 0 24 24" style="height:28px; fill:var(--oro);">
+        <div class="logo">
+            <svg viewBox="0 0 24 24">
                 <path d="M2 19h20v2H2v-2zm18-9l-4 4-4-8-4 8-4-4-1 8h18l-1-8z" />
             </svg>
             Nadya Arrieta
         </div>
         <div class="nav-links">
-            <a href="#cursos" style="color: var(--esmeralda-dark);">Cursos</a>
-            <a href="#proceso" style="color: var(--esmeralda-dark);">Cómo Funciona</a>
-            <a href="#sobre-mi" style="color: var(--esmeralda-dark);">Sobre Mí</a>
+            <a href="#cursos">Cursos</a>
+            <a href="#sobre-mi">Sobre Mí</a>
         </div>
     </nav>
 
-    <!-- Split Hero -->
     <header class="hero-split">
-        <div class="hero-split-text">
-            <h1 class="fade-in-up delay-1">Domina el<br><span>Arte de las Uñas</span></h1>
-            <p class="fade-in-up delay-2">Desde principiante hasta avanzada. Aprende con los mejores cursos en video, a
-                tu ritmo, desde donde estés.</p>
-
-            <div class="hero-stats-l2 fade-in-up delay-3">
-                <div class="stat-l2">
-                    <div class="stat-num-l2">9+</div>
-                    <div class="stat-label-l2">Cursos</div>
-                </div>
-                <div class="stat-l2">
-                    <div class="stat-num-l2">100%</div>
-                    <div class="stat-label-l2">Online</div>
-                </div>
-                <div class="stat-l2">
-                    <div class="stat-num-l2">∞</div>
-                    <div class="stat-label-l2">Acceso</div>
-                </div>
-            </div>
-
-            <div style="display: flex; gap: 16px; align-items: center;" class="fade-in-up delay-4">
+        <div class="hero-split-text reveal">
+            <span class="hero-tag"
+                style="color:var(--turquesa); letter-spacing:0.2em; display:block; margin-bottom:20px;">✦ Tu Proyección
+                Profesional</span>
+            <h1 style="color:var(--esmeralda-deep); font-weight:400;">Domina el Arte <br><span
+                    style="color:var(--turquesa); font-style:italic;">de las Uñas</span></h1>
+            <p style="color:var(--texto-medio); margin:30px 0 40px; max-width:500px;">Aprendé técnica, diseño y gestión
+                de negocio con Nadya Arrieta. Cursos diseñados para que logres la independencia económica.</p>
+            <div>
                 <button class="btn btn-primary"
-                    onclick="document.getElementById('cursos').scrollIntoView({behavior: 'smooth'})">Explorar
-                    Academia</button>
+                    onclick="document.getElementById('cursos').scrollIntoView({behavior:'smooth'})">Ver Cursos
+                    Disponibles</button>
             </div>
         </div>
-
-        <div class="hero-split-image fade-in-up">
-            <img src="img/nadya-hero.jpg" alt="Nadya trabajando" style="object-fit: cover;">
-            <div class="floating-video">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Promocional Vertical"></iframe>
-            </div>
+        <div class="hero-split-img reveal">
+            <img src="img/nadya-hero.jpg" alt="Nadya trabajando"
+                style="height:100%; object-position: center 20%; opacity:0.8; mix-blend-mode:luminosity;">
         </div>
     </header>
 
-    <!-- ═══════ MI HISTORIA — Parte 1 ═══════ -->
-    <section class="story-section" id="mi-historia">
-        <div class="story-container">
-            <div class="story-img fade-in-up">
-                <img src="img/B_JFL-4200.jpg" alt="Nadya trabajando">
+    <section id="cursos" class="section-alt">
+        <div class="container">
+            <div class="flex flex-mobile-column"
+                style="background:var(--esmeralda-dark); color:#fff; padding:40px; border-radius:20px; align-items:center; margin-bottom:50px;"
+                class="reveal">
+                <div class="flex-1">
+                    <span
+                        style="background:var(--oro); color:var(--esmeralda-dark); padding:4px 12px; border-radius:4px; font-size:0.7rem; font-weight:700;">★
+                        PACK COMPLETO</span>
+                    <h2 class="text-gold-gradient" style="margin-top:15px;">Academia Nadya Arrieta</h2>
+                    <p style="opacity:0.7; margin-top:10px;">Accedé a los 9 cursos con un solo pago. Tu formación
+                        definitiva para ser una Master en Uñas.</p>
+                </div>
+                <div style="text-align:right;" class="flex-mobile-center">
+                    <div style="text-decoration:line-through; opacity:0.4;">$299 USD</div>
+                    <div style="font-size:3rem; font-weight:700; color:var(--oro);">$149 USD</div>
+                    <button class="btn btn-gold" style="margin-top:20px;"
+                        onclick="openPaymentModal('Academia Completa', '149 USD')">Adquirir Todo</button>
+                </div>
             </div>
-            <div class="story-text">
-                <span class="hero-tag fade-in-up" style="color:var(--turquesa-light);">✦ Mi Historia</span>
-                <h2 class="serif text-gold-gradient fade-in-up delay-1">Bienvenidos a mi Escuela de Uñas Online</h2>
-                <p class="fade-in-up delay-2">
-                    Soy Nadya Arrieta y desde marzo de 2014 he convertido mi pasión por las uñas en una carrera exitosa
-                    e
-                    inspiradora. Comencé arreglando las uñas de mis amigas, con mucho temor pero con una fe
-                    inquebrantable en
-                    que podía lograr la independencia y seguir mi pasión. Hoy, después de muchos años de crecimiento,
-                    tengo mi
-                    propia escuela, donde formamos profesionales con un enfoque integral en el desarrollo personal, las
-                    energías
-                    y obviamente la formación profesional necesaria y adecuada.
-                </p>
-                <p class="fade-in-up delay-3">
-                    Creo firmemente que todxs podemos alcanzar nuestros sueños, sin importar de dónde venimos. Mi misión
-                    es
-                    llevar mi conocimiento a todo el mundo con mis cursos online, para que cada persona que llegue a mi
-                    escuela
-                    se convierta en una profesional de excelencia. ¡Te invito a ser parte de esta comunidad y a expandir
-                    tus
-                    horizontes con mis cursos y formaciones!
-                </p>
+
+            <div class="cards-flex-grid">
+                <div class="flex-card reveal">
+                    <span style="color:var(--turquesa); font-weight:700; font-size:0.7rem;">PRINCIPIANTE</span>
+                    <h3 style="margin-top:10px;">Curso: Uñas Básicas</h3>
+                    <p style="margin:15px 0; color:var(--texto-medio);">Fundamentos esenciales para comenzar tu camino
+                        profesional.</p>
+                    <div class="flex" style="justify-content:space-between; align-items:center; margin-top:20px;">
+                        <span style="font-size:1.4rem; font-weight:700; color:var(--esmeralda);">$29 USD</span>
+                        <button class="btn btn-primary" style="padding:10px 20px;"
+                            onclick="openPaymentModal('Uñas Básicas', '29 USD')">Inscribirme</button>
+                    </div>
+                </div>
+
+                <div class="flex-card reveal delay-1">
+                    <span style="color:var(--turquesa); font-weight:700; font-size:0.7rem;">BÁSICO</span>
+                    <h3 style="margin-top:10px;">Curso: Gel UV</h3>
+                    <p style="margin:15px 0; color:var(--texto-medio);">Domina el sistema de gel, construcción y
+                        esmaltado perfecto.</p>
+                    <div class="flex" style="justify-content:space-between; align-items:center; margin-top:20px;">
+                        <span style="font-size:1.4rem; font-weight:700; color:var(--esmeralda);">$35 USD</span>
+                        <button class="btn btn-primary" style="padding:10px 20px;"
+                            onclick="openPaymentModal('Gel UV', '35 USD')">Inscribirme</button>
+                    </div>
+                </div>
+
+                <div class="flex-card reveal delay-2">
+                    <span style="color:var(--turquesa); font-weight:700; font-size:0.7rem;">AVANZADO</span>
+                    <h3 style="margin-top:10px;">Nail Art Premium</h3>
+                    <p style="margin:15px 0; color:var(--texto-medio);">Diseños de nivel experto y técnicas de alta
+                        gama.</p>
+                    <div class="flex" style="justify-content:space-between; align-items:center; margin-top:20px;">
+                        <span style="font-size:1.4rem; font-weight:700; color:var(--esmeralda);">$49 USD</span>
+                        <button class="btn btn-primary" style="padding:10px 20px;"
+                            onclick="openPaymentModal('Nail Art Premium', '49 USD')">Inscribirme</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Courses -->
-    <section class="courses-clean" id="cursos">
-        <div class="section-title-clean fade-in-up">
-            <span>Elige tu camino</span>
-            <h2 class="serif">Nuestros Cursos</h2>
-        </div>
-
-        <!-- Pack Promocional -->
-        <div class="pack-l2 fade-in-up delay-1">
-            <div class="pack-l2-info">
-                <span class="pack-l2-badge">★ Mejor Valor</span>
-                <h3 class="serif">Pack Completo de Uñas</h3>
-                <p>Accedé a los 9 cursos de una sola vez. De principiante a avanzada, todos incluidos con acceso
-                    inmediato y de por vida.</p>
-                <button class="btn btn-primary" onclick="openPaymentModal('Pack Completo de Uñas', '149 USD')">Comprar
-                    Pack</button>
-            </div>
-            <div style="text-align: right;">
-                <div
-                    style="text-decoration: line-through; color: var(--texto-medio); font-size: 1rem; margin-bottom: 4px;">
-                    $299 USD</div>
-                <div class="pack-l2-price">$149 USD</div>
-            </div>
-        </div>
-
-        <div class="course-list reveal">
-            <div class="course-row">
-                <div class="cr-badge" style="background:#0d6b50; color:#fff;">Principiante</div>
-                <div>
-                    <h3 class="cr-title">Curso: Uñas Básicas</h3>
-                    <p class="cr-desc">6 lecciones ideales si recién comienzas. Técnica y fundamentos.</p>
-                </div>
-                <div class="cr-price">$29 USD</div>
-                <button class="btn btn-primary"
-                    onclick="openPaymentModal('Uñas Básicas', '29 USD')">Inscribirme</button>
-            </div>
-            <div class="course-row">
-                <div class="cr-badge" style="background:#1aaa85; color:#fff;">Básico</div>
-                <div>
-                    <h3 class="cr-title">Curso: Gel UV</h3>
-                    <p class="cr-desc">8 lecciones para dominar la construcción y esmaltado con Gel UV.</p>
-                </div>
-                <div class="cr-price">$35 USD</div>
-                <button class="btn btn-primary" onclick="openPaymentModal('Gel UV', '35 USD')">Inscribirme</button>
-            </div>
-            <div class="course-row">
-                <div class="cr-badge" style="background:#2dd4b0; color:#0d6b50;">Intermedio</div>
-                <div>
-                    <h3 class="cr-title">Nail Art Floral</h3>
-                    <p class="cr-desc">10 lecciones enfocadas en diseño floral y trazos finos.</p>
-                </div>
-                <div class="cr-price">$39 USD</div>
-                <button class="btn btn-primary"
-                    onclick="openPaymentModal('Nail Art Floral', '39 USD')">Inscribirme</button>
-            </div>
-            <div class="course-row">
-                <div class="cr-badge" style="background:var(--oro); color:var(--esmeralda-dark);">Avanzado</div>
-                <div>
-                    <h3 class="cr-title">Nail Art Premium</h3>
-                    <p class="cr-desc">12 lecciones de nivel maestro. Texturas y acabados de lujo.</p>
-                </div>
-                <div class="cr-price">$49 USD</div>
-                <button class="btn btn-primary"
-                    onclick="openPaymentModal('Nail Art Premium', '49 USD')">Inscribirme</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════ CITA / HISTORIA — Parte 2 ═══════ -->
-    <section class="quote-section">
-        <div class="tribal-bg" style="opacity:0.06;"></div>
-        <div class="quote-container fade-in-up">
-            <div class="quote-icon">❝</div>
-            <p class="quote-text fade-in-up delay-1">
-                Cuando comencé este camino, no sabía hasta dónde podía llegar. Solo tenía un sueño, unas manos
-                dispuestas a
-                crear y una enorme fe en que Dios me estaba guiando. Lo que empezó como un pasatiempo con amigas, se
-                transformó en mi propósito: ayudar a otras personas a descubrir su talento y a brillar con lo que aman
-                hacer.
-            </p>
-            <p class="quote-text fade-in-up delay-2">
-                En mi escuela no solo enseño técnicas, también comparto energía, confianza y la certeza de que cada una
-                de
-                nosotras tiene la capacidad de crecer y transformar su vida. Porque ser profesional de las uñas no es
-                solo un
-                trabajo… es independencia, creatividad y libertad.
-            </p>
-        </div>
-    </section>
-
-    <!-- Proceso & About -->
-    <section class="info-split-l2">
-        <div class="l2-grid">
-            <div id="proceso">
-                <div class="section-title-clean fade-in-up" style="margin-bottom: 40px;">
-                    <span>Simple y rápido</span>
-                    <h2 class="serif">¿Cómo funciona?</h2>
-                </div>
-                <div class="step-l2 fade-in-up delay-1">
-                    <div class="step-num-l2">01</div>
-                    <div>
-                        <h4>Elegí tu curso</h4>
-                        <p>Buscá el curso ideal según tu nivel, desde principiante hasta avanzada.</p>
-                    </div>
-                </div>
-                <div class="step-l2 fade-in-up delay-2">
-                    <div class="step-num-l2">02</div>
-                    <div>
-                        <h4>Comprá con seguridad</h4>
-                        <p>Pago seguro por transferencia bancaria. Confirmación garantizada.</p>
-                    </div>
-                </div>
-                <div class="step-l2 fade-in-up delay-3">
-                    <div class="step-num-l2">03</div>
-                    <div>
-                        <h4>Acceso inmediato</h4>
-                        <p>Recibís tu acceso al instante. Mirá los videos cuando quieras desde tu teléfono.</p>
-                    </div>
-                </div>
-                <div class="step-l2 fade-in-up delay-4">
-                    <div class="step-num-l2">04</div>
-                    <div>
-                        <h4>Aprendé y crecé</h4>
-                        <p>Seguí las clases a tu ritmo y transformá tu carrera como nail artist.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div id="sobre-mi" class="fade-in-up">
-                <div class="about-card-l2">
-                    <div class="about-img-container">
+    <section id="sobre-mi">
+        <div class="container">
+            <div class="story-block reveal">
+                <div class="flex-1">
+                    <div class="about-img-container" style="height:400px; border-radius:20px;">
                         <img src="img/B_JFL-4248.jpg" alt="Nadya Arrieta">
                     </div>
-                    <h3
-                        style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:var(--esmeralda-deep); margin-bottom:10px;">
-                        El futuro está en tus manos</h3>
-                    <p>Si sentís que es tu momento, quiero invitarte a dar el primer paso, sumate a mi Curso para
-                        Principiantes, y descubrí todo lo que sos capaz de lograr.</p>
-                    <p style="color: var(--turquesa); font-style: italic; margin-top: 10px;">Y yo voy a estar para
-                        acompañarte en cada paso de tu transformación.</p>
-                    <p
-                        style="color: var(--esmeralda-deep); font-family:'Cormorant Garamond',serif; font-size: 1.1rem; margin-top: 8px;">
-                        — Nadya Arrieta</p>
+                </div>
+                <div class="flex-1">
+                    <h2 style="color:var(--esmeralda-deep); margin-bottom:20px;">Mi Visión Profesional</h2>
+                    <p style="color:var(--texto-medio); line-height:1.8; margin-bottom:20px;">
+                        Creo que el arte de las uñas es más que estética; es una herramienta de empoderamiento. Mi
+                        objetivo es que cada alumna no solo aprenda técnica, sino que desarrolle una mentalidad de
+                        éxito.
+                    </p>
+                    <button class="btn btn-outline"
+                        onclick="document.getElementById('cursos').scrollIntoView({behavior:'smooth'})">Quiero ser
+                        parte</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer style="margin-top: 0; padding-bottom: 30px;">
-        <div class="footer-logo serif text-gold-gradient">Nadya Arrieta</div>
-        <div
-            style="font-size:0.7rem; color:rgba(255,255,255,0.4); text-transform:uppercase; letter-spacing:0.15em; margin-bottom: 20px;">
-            Escuela de Uñas Profesional</div>
-        <div class="footer-links">
-            <a href="https://instagram.com/nadyayagie" target="_blank">Instagram @nadyayagie</a>
-            <a href="#">Términos y Condiciones</a>
-        </div>
-        <div
-            style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; gap: 8px; align-items: center;">
-            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.4); margin: 0;">© 2026 Nadya Arrieta. Todos los
-                derechos reservados.</p>
-            <p style="font-size: 0.7rem; color: rgba(255,255,255,0.3); margin: 0;">Diseño por <a
-                    href="https://francoparedes.vercel.app" target="_blank"
-                    style="color: var(--turquesa-light); text-decoration: none;">Franco Paredes</a></p>
+    <footer>
+        <div class="container">
+            <h3>Nadya Arrieta</h3>
+            <div class="flex flex-center" style="margin-top:20px; gap:20px;">
+                <a href="#cursos" style="color:rgba(255,255,255,0.6);">Cursos</a>
+                <a href="#sobre-mi" style="color:rgba(255,255,255,0.6);">Sobre Mí</a>
+            </div>
         </div>
     </footer>
 
-    <!-- Modal Payment -->
+    <!-- Modal Base (same for all) -->
     <div class="modal-overlay" id="paymentModal">
-        <div class="modal-content" style="color: var(--texto-oscuro);">
-            <button class="modal-close" onclick="closePaymentModal()">×</button>
-            <h3 class="serif" style="font-size: 2rem; color: var(--esmeralda-deep); margin-bottom: 8px;">Inscripción
-            </h3>
-            <p style="color: var(--texto-medio); margin-bottom: 24px; font-size: 0.95rem;">Programa seleccionado:
-                <strong id="modalCourseName" style="color:var(--esmeralda)">Curso</strong><br>Valor: <strong
-                    id="modalCoursePrice">precio</strong>.
-            </p>
-
-            <div
-                style="background: var(--crema); border: 1px solid var(--esmeralda); padding: 20px; border-radius: 8px; margin-bottom: 24px;">
-                <p
-                    style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--esmeralda); margin-bottom: 12px; font-weight: 600;">
-                    Pago vía Transferencia</p>
-                <p style="font-size: 0.9rem; margin-bottom: 10px;">Transfiere con los siguientes datos y envíanos el
-                    comprobante por WhatsApp para darte acceso a las clases maestras.</p>
-
-                <div class="bank-details" style="background:#fff; padding:15px; border-radius:8px;">
-                    <p style="display:flex; justify-content:space-between; margin-bottom:8px;"><span>CBU/CVU:</span>
-                        <strong style="color:var(--esmeralda-deep)">0000003100010000123456</strong>
-                    </p>
-                    <p style="display:flex; justify-content:space-between; margin-bottom:8px;"><span>Alias:</span>
-                        <strong style="color:var(--esmeralda-deep)">nadya.escuela.unas</strong>
-                    </p>
-                    <p style="display:flex; justify-content:space-between; margin-bottom:8px;"><span>Titular:</span>
-                        <strong style="color:var(--esmeralda-deep)">Nadya Arrieta</strong>
-                    </p>
-                    <p style="display:flex; justify-content:space-between;"><span>Banco:</span> <strong
-                            style="color:var(--esmeralda-deep)">MercadoPago</strong></p>
-                </div>
+        <div class="modal-content">
+            <h3 id="modalTitle">Inscripción</h3>
+            <div style="margin:20px 0; padding:20px; background:#fff; border-radius:10px;">
+                <p>Transferencia Bancaria (Argentina)</p>
+                <p style="margin-top:10px;"><strong>Alias:</strong> NADYA.UÑAS.ARG</p>
+                <p><strong>Titular:</strong> Nadya Arrieta</p>
             </div>
-
-            <a href="#" target="_blank" id="wpLink" class="btn btn-primary" style="width: 100%;">Enviar Comprobante
-                (WhatsApp)</a>
+            <button class="btn btn-primary" style="width:100%;" onclick="closePaymentModal()">Cerrar</button>
         </div>
     </div>
 
     <script src="main.js"></script>
+    <script>
+        function openPaymentModal(title, price) {
+            document.getElementById('modalTitle').innerText = 'Inscripción: ' + title;
+            document.getElementById('paymentModal').classList.add('active');
+        }
+        function closePaymentModal() {
+            document.getElementById('paymentModal').classList.remove('active');
+        }
+    </script>
 </body>
 
 </html>

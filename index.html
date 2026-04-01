@@ -6,58 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nadya Arrieta | Propuestas de Diseño</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: var(--esmeralda-dark);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+        }
 
+        .index-container {
+            max-width: 1200px;
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="tribal-bg"></div>
+    <div class="index-container">
+        <div style="text-align:center; margin-bottom:60px;" class="reveal">
+            <h1 class="text-gold-gradient">Nadya Arrieta</h1>
+            <p style="opacity:0.7; max-width:600px; margin:20px auto 0;">Seleccioná una de las 4 propuestas de diseño
+                refaccionadas con el nuevo sistema Flexbox responsive.</p>
+        </div>
 
-    <div class="index-header">
-        <h1 class="serif fade-in-up delay-1">Nadya Arrieta</h1>
-        <p class="fade-in-up delay-2">Selecciona una de las 4 propuestas de diseño para la portada principal (Landing /
-            Home) de la escuela. Todas
-            cuentan con el aviso de pago por transferencia.</p>
+        <div class="cards-flex-grid">
+            <div class="flex-card reveal"
+                style="background: rgba(255,255,255,0.05); color:#fff; border-color:rgba(255,255,255,0.1);">
+                <div style="font-family:'Cormorant Garamond', serif; font-size:4rem; color:var(--oro); line-height:1;">
+                    01</div>
+                <h3 style="margin:20px 0;">Clásico & Majestuoso</h3>
+                <p style="opacity:0.6; margin-bottom:30px;">Fondo oscuro, 50/50 Split Hero. Autoridad y elegancia.</p>
+                <a href="landing1.html" class="btn btn-gold" style="width:100%;">Ver Propuesta</a>
+            </div>
+
+            <div class="flex-card reveal delay-1"
+                style="background: rgba(255,255,255,0.05); color:#fff; border-color:rgba(255,255,255,0.1);">
+                <div style="font-family:'Cormorant Garamond', serif; font-size:4rem; color:var(--oro); line-height:1;">
+                    02</div>
+                <h3 style="margin:20px 0;">Moderno & Luminoso</h3>
+                <p style="opacity:0.6; margin-bottom:30px;">Split-Screen asimétrico. Estética fresca y profesional.</p>
+                <a href="landing2.html" class="btn btn-gold" style="width:100%;">Ver Propuesta</a>
+            </div>
+
+            <div class="flex-card reveal delay-2"
+                style="background: rgba(255,255,255,0.05); color:#fff; border-color:rgba(255,255,255,0.1);">
+                <div style="font-family:'Cormorant Garamond', serif; font-size:4rem; color:var(--oro); line-height:1;">
+                    03</div>
+                <h3 style="margin:20px 0;">Inmersivo Tribal</h3>
+                <p style="opacity:0.6; margin-bottom:30px;">Glassmorphism y alternancia Row/Reverse. Alto impacto
+                    visual.</p>
+                <a href="landing3.html" class="btn btn-gold" style="width:100%;">Ver Propuesta</a>
+            </div>
+
+            <div class="flex-card reveal delay-3"
+                style="background: rgba(255,255,255,0.05); color:#fff; border-color:rgba(255,255,255,0.1);">
+                <div style="font-family:'Cormorant Garamond', serif; font-size:4rem; color:var(--oro); line-height:1;">
+                    04</div>
+                <h3 style="margin:20px 0;">Bloques Estructurados</h3>
+                <p style="opacity:0.6; margin-bottom:30px;">Secciones claras con fondos alternantes. Orden y
+                    profesionalismo.</p>
+                <a href="landing4.html" class="btn btn-gold" style="width:100%;">Ver Propuesta</a>
+            </div>
+        </div>
     </div>
 
-    <div class="proposals-grid">
-
-        <!-- Propuesta 1 -->
-        <div class="proposal-card fade-in-up delay-1">
-            <div class="pc-number">01</div>
-            <h2 class="pc-title">Diseño Clásico & Majestuoso</h2>
-            <p class="pc-desc">Fondo oscuro, centrado, con énfasis en el video promocional. Ideal para transmitir
-                elegancia y autoridad. Diseño limpio de grilla de cursos.</p>
-            <a href="landing1.html" class="btn-view" target="_blank">Ver Demo 1</a>
-        </div>
-
-        <!-- Propuesta 2 -->
-        <div class="proposal-card fade-in-up delay-2">
-            <div class="pc-number">02</div>
-            <h2 class="pc-title">Diseño Moderno & Luminoso</h2>
-            <p class="pc-desc">Layout asimétrico (Split-Screen) enfocado en tu marca personal. Tema claro (Crema) con
-                acentos esmeralda. Incluye video tipo Reel flotante.</p>
-            <a href="landing2.html" class="btn-view" target="_blank">Ver Demo 2</a>
-        </div>
-
-        <!-- Propuesta 3 -->
-        <div class="proposal-card fade-in-up delay-3">
-            <div class="pc-number">03</div>
-            <h2 class="pc-title">Diseño Inmersivo Tribal</h2>
-            <p class="pc-desc">Muy oscuro y de alto contraste. Uso intensivo de Glassmorphism (paneles de vidrio) e
-                iconos gigantes. Enfoque agresivo a la venta de la Academia Completa.</p>
-            <a href="landing3.html" class="btn-view" target="_blank">Ver Demo 3</a>
-        </div>
-
-        <!-- Propuesta 4 -->
-        <div class="proposal-card fade-in-up delay-4">
-            <div class="pc-number">04</div>
-            <h2 class="pc-title">Diseño Original</h2>
-            <p class="pc-desc">El diseño inicial con fondo interactivo tribal, presentación de cursos y enfoque de
-                escuela en línea.</p>
-            <a href="landing4.html" class="btn-view" target="_blank">Ver Demo 4</a>
-        </div>
-
-    </div>
     <script src="main.js"></script>
 </body>
 
