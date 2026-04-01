@@ -1,6 +1,6 @@
 {
     "project_name": "Nadya Arrieta Escuela de Uñas",
-    "current_status": "Frontend v1 Completado",
+    "current_status": "Landing Pages v2 (Historia integrada y optimizada)",
     "tech_stack": [
         "HTML5 Semántico",
         "CSS3 (Vanilla, Variables, Glassmorphism)",
@@ -21,24 +21,34 @@
         ],
         "ui_patterns": [
             "Scroll animations (fade-in-up)",
-            "Dark y Light themes support",
-            "Botones Outline y Solid responsive",
-            "Modales centralizados"
+            "Narrativa en primera persona (Storytelling)",
+            "Desktop-First Responsive (Optimización de Imágenes)",
+            "Footer full-width con créditos de autor",
+            "Modales centralizados de pago por transferencia"
         ]
     },
     "file_structure": {
         "index.html": "Menú selector de demos. Estructura de grilla de 4 opciones.",
-        "landing1.html": "Clásica y majestuosa. Layout 100% centrado, oscuro.",
-        "landing2.html": "Diseño Elegido: Moderno asimétrico (Split-Screen). Luminoso (Fondo Crema), estilo premium dinámico.",
-        "landing3.html": "Tribal Inmerso. Fondo animado con círculos de brillo, uso de pseudo-vidrio (Glassmorphism).",
-        "landing4.html": "Reestructuración del código HTML original proporcionado por el usuario usando styles.css",
-        "styles.css": "Hoja de estilos global unificada. Más de 800 líneas de lógica responsiva.",
-        "main.js": "Lógica central: Cierre de modales, links dinámicos de WhatsApp con texto codificado, animaciones de intersección.",
-        "img/": "Directorio conteniendo las fotos nadya-hero.jpg y nadya-perfil.jpg y otras imágenes de la producción."
+        "landing1.html": "Clásica y majestuosa. Incluye secciones 'Mi Historia' y 'Cita' con narrativa personal.",
+        "landing2.html": "Diseño Moderno asimétrico (Split-Screen). Luminoso, con historia integrada tras el hero.",
+        "landing3.html": "Tribal Inmerso. Uso intensivo de Glassmorphism con secciones de storytelling intercaladas.",
+        "landing4.html": "Versión original adaptada con sistema de diseño unificado e historia incorporada.",
+        "styles.css": "Hoja de estilos global (>850 líneas). Optimización de imágenes (480px max-height en desktop) y footers full-width.",
+        "main.js": "Lógica de animaciones IntersectionObserver, cierre de modales y links de WhatsApp dinámicos.",
+        "img/": "Galería fotográfica profesional de Nadya Arrieta (B_JFL-4200.jpg, B_JFL-4223.jpg, etc.)."
     },
-    "business_logic_current": "El usuario elige un curso, se abre un modal de advertencia indicando cuenta bancaria, y al hacer click se genera un enlace de WhatsApp con el nombre del curso y precio pre-llenados.",
+    "storytelling_content": {
+        "narrativa": "Primera persona (Nadya Arrieta)",
+        "seccion_historia": "Enfoque integral: Pasión, desarrollo personal, energías y formación profesional necesaria.",
+        "cita_inspiracional": "Propósito de ayudar a otros a descubrir su talento y brillar, independencia y libertad.",
+        "cta_final": "Invitación personalizada a dar el primer paso con acompañamiento permanente."
+    },
+    "credits": {
+        "designer": "Franco Paredes",
+        "portfolio": "https://francoparedes.vercel.app"
+    },
     "future_roadmap": {
         "Phase_4": "Portal Privado Frontend (login.html, dashboard.html, clase.html).",
-        "Phase_5": "Automatización Backend (Recolección de datos, Pasarela de Pago real, Base de Datos MySQL/NoSQL, Webhooks para confirmación instantánea, y envío de email con credenciales autogeneradas)."
+        "Phase_5": "Automatización Backend (Pasarela de Pago real, Base de Datos, Webhooks, Emails autogenerados)."
     }
 }
