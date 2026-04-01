@@ -6,351 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nadya Arrieta | Escuela de Uñas (Diseño 3)</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* L3 Specific Styles (Tribal, Glassmorphism, Immersive Dark) */
-        body {
-            background: var(--texto-oscuro);
-            color: var(--blanco);
-            overflow-x: hidden;
-        }
-
-        /* Animated Tribal Background */
-        .tribal-bg {
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%231aaa85' stroke-width='0.5' opacity='0.05'%3E%3Cpath d='M50 0 L100 50 L50 100 L0 50 Z'/%3E%3Ccircle cx='50' cy='50' r='20'/%3E%3C/g%3E%3C/svg%3E");
-            animation: drift 40s linear infinite;
-        }
-
-        @keyframes drift {
-            0% {
-                background-position: 0 0;
-            }
-
-            100% {
-                background-position: 100px 100px;
-            }
-        }
-
-        .glow-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(100px);
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .orb-1 {
-            top: -10%;
-            left: -10%;
-            width: 50vw;
-            height: 50vw;
-            background: rgba(13, 107, 80, 0.4);
-        }
-
-        .orb-2 {
-            bottom: -10%;
-            right: -10%;
-            width: 40vw;
-            height: 40vw;
-            background: rgba(45, 212, 176, 0.2);
-        }
-
-        .hero-glass {
-            padding: 150px 5% 80px;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-glass h1 {
-            font-size: clamp(3.5rem, 8vw, 7rem);
-            color: var(--blanco);
-            line-height: 1;
-            letter-spacing: -0.02em;
-        }
-
-        .hero-glass .subtitle {
-            font-size: 1.2rem;
-            color: var(--turquesa-light);
-            margin: 20px 0 40px;
-            font-weight: 300;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
-        .hero-stats-l3 {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 0 auto 50px;
-        }
-
-        .stat-l3 {
-            text-align: center;
-        }
-
-        .stat-num-l3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
-            font-weight: 600;
-            color: var(--oro);
-            line-height: 1;
-        }
-
-        .stat-label-l3 {
-            font-size: 0.7rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.5);
-            margin-top: 4px;
-        }
-
-        .bundle-card {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 60px;
-            text-align: left;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(201, 168, 76, 0.3);
-        }
-
-        .bundle-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(45deg, rgba(8, 77, 56, 0.2), transparent);
-            pointer-events: none;
-        }
-
-        .bundle-info h2 {
-            font-size: 2.5rem;
-            color: var(--oro);
-            margin-bottom: 16px;
-            line-height: 1.1;
-        }
-
-        .bundle-info ul {
-            margin: 24px 0;
-        }
-
-        .bundle-info li {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .bundle-info li::before {
-            content: '✦';
-            color: var(--turquesa-light);
-            font-size: 0.8rem;
-        }
-
-        .bundle-price-box {
-            margin-bottom: 24px;
-        }
-
-        .bundle-price {
-            font-size: 3rem;
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--blanco);
-            display: block;
-            line-height: 1;
-        }
-
-        .bundle-old-price {
-            font-size: 1.2rem;
-            text-decoration: line-through;
-            color: rgba(255, 255, 255, 0.4);
-            margin-bottom: -5px;
-            display: block;
-        }
-
-        .bundle-video iframe {
-            width: 100%;
-            aspect-ratio: 16/9;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        @media (max-width: 768px) {
-            .bundle-card {
-                grid-template-columns: 1fr;
-                padding: 30px;
-                text-align: center;
-            }
-
-            .bundle-info li {
-                justify-content: center;
-            }
-        }
-
-        /* Grid individual */
-        .individual-courses {
-            padding: 80px 5%;
-        }
-
-        .grid-glass {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .course-glass {
-            padding: 30px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.4s;
-            position: relative;
-        }
-
-        .course-glass:hover {
-            transform: translateY(-10px);
-            background: rgba(8, 77, 56, 0.6);
-            border-color: var(--turquesa);
-        }
-
-        .cg-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            font-size: 0.6rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 4px 10px;
-            border-radius: 4px;
-            color: var(--turquesa-light);
-        }
-
-        .cg-icon {
-            font-size: 3rem;
-            margin: 20px 0 16px;
-            display: block;
-        }
-
-        .cg-title {
-            font-size: 1.6rem;
-            color: var(--blanco);
-            margin-bottom: 8px;
-        }
-
-        .cg-desc {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 20px;
-            flex: 1;
-            text-align: left;
-        }
-
-        .cg-footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .cg-price {
-            font-size: 1.4rem;
-            color: var(--turquesa-light);
-            font-weight: 500;
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        /* Info Grid Glass */
-        .glass-info {
-            padding: 80px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
-        }
-
-        @media (max-width: 900px) {
-            .glass-info {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .step-g {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 24px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .step-num-g {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            color: var(--oro);
-        }
-
-        .step-g h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
-            color: var(--turquesa-light);
-            margin-bottom: 4px;
-        }
-
-        .step-g p {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .about-g {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 50px 30px;
-        }
-
-        .about-g h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
-            color: var(--blanco);
-            margin: 16px 0 4px;
-        }
-
-        .about-g h5 {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--turquesa);
-            margin-bottom: 20px;
-        }
-
-        .about-g p {
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
-    </style>
-</head>
+    </head>
 
 <body>
     <div class="tribal-bg"></div>
     <div class="glow-orb orb-1"></div>
     <div class="glow-orb orb-2"></div>
 
-    <!-- Nav -->
     <nav id="navbar" class="glass-panel" style="margin: 20px 5%; width: 90%; padding: 15px 30px; border-radius: 50px;">
         <div class="logo">
             <svg viewBox="0 0 24 24" style="height:28px; fill:var(--oro);">
@@ -365,7 +27,6 @@
         </div>
     </nav>
 
-    <!-- Hero with Bundle focus -->
     <section class="hero-glass" id="bundle">
         <h1 class="serif fade-in-up">Domina el<br><span class="text-gold-gradient">Arte de las Uñas</span></h1>
         <p class="subtitle fade-in-up delay-1">Desde principiante hasta avanzada</p>
@@ -385,7 +46,6 @@
             </div>
         </div>
 
-        <!-- Bundle Glass Card -->
         <div class="glass-panel bundle-card fade-in-up delay-3">
             <div class="bundle-info">
                 <span
@@ -407,13 +67,39 @@
                 <button class="btn btn-primary" onclick="openPaymentModal('Pack Completo de Uñas', '149 USD')">Adquirir
                     Academia Completa</button>
             </div>
-            <div class="bundle-video">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video de Bienvenida"></iframe>
+            <div class="bundle-video fade-in-up delay-4">
+                <img src="img/nadya-hero.jpg" alt="Nadya Arrieta"
+                    style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.6); object-fit: cover;">
             </div>
         </div>
     </section>
 
-    <!-- Individual Courses -->
+    <!-- ═══════ MI HISTORIA — Parte 1 ═══════ -->
+    <section class="story-section" id="mi-historia">
+      <div class="story-container">
+        <div class="story-img fade-in-up">
+          <img src="img/B_JFL-4200.jpg" alt="Nadya trabajando">
+        </div>
+        <div class="story-text">
+          <span class="hero-tag fade-in-up" style="color:var(--turquesa-light);">✦ Mi Historia</span>
+          <h2 class="serif text-gold-gradient fade-in-up delay-1">Bienvenidos a mi Escuela de Uñas Online</h2>
+          <p class="fade-in-up delay-2">
+            Soy Nadya Arrieta y desde marzo de 2014 he convertido mi pasión por las uñas en una carrera exitosa e
+            inspiradora. Comencé arreglando las uñas de mis amigas, con mucho temor pero con una fe inquebrantable en
+            que podía lograr la independencia y seguir mi pasión. Hoy, después de muchos años de crecimiento, tengo mi
+            propia escuela, donde formamos profesionales con un enfoque integral en el desarrollo personal, las energías
+            y obviamente la formación profesional necesaria y adecuada.
+          </p>
+          <p class="fade-in-up delay-3">
+            Creo firmemente que todxs podemos alcanzar nuestros sueños, sin importar de dónde venimos. Mi misión es
+            llevar mi conocimiento a todo el mundo con mis cursos online, para que cada persona que llegue a mi escuela
+            se convierta en una profesional de excelencia. ¡Te invito a ser parte de esta comunidad y a expandir tus
+            horizontes con mis cursos y formaciones!
+          </p>
+        </div>
+      </div>
+    </section>
+
     <section class="individual-courses" id="individuales">
         <div style="text-align: center; margin-bottom: 50px;" class="fade-in-up">
             <span
@@ -423,7 +109,6 @@
         </div>
 
         <div class="grid-glass">
-            <!-- Curso 1 -->
             <div class="glass-panel course-glass fade-in-up delay-1">
                 <span class="cg-badge">Principiante</span>
                 <span class="cg-icon" style="text-shadow: 0 0 20px rgba(45,212,176,0.5);">💅</span>
@@ -435,8 +120,6 @@
                         onclick="openPaymentModal('Uñas Básicas', '29 USD')">Comprar</button>
                 </div>
             </div>
-
-            <!-- Curso 2 -->
             <div class="glass-panel course-glass fade-in-up delay-2">
                 <span class="cg-badge" style="color:#8aab9c">Básico</span>
                 <span class="cg-icon">✨</span>
@@ -448,8 +131,6 @@
                         onclick="openPaymentModal('Gel UV', '35 USD')">Comprar</button>
                 </div>
             </div>
-
-            <!-- Curso 3 -->
             <div class="glass-panel course-glass fade-in-up delay-3">
                 <span class="cg-badge" style="color:var(--turquesa)">Intermedio</span>
                 <span class="cg-icon">🌸</span>
@@ -461,8 +142,6 @@
                         onclick="openPaymentModal('Nail Art Floral', '39 USD')">Comprar</button>
                 </div>
             </div>
-
-            <!-- Curso 4 -->
             <div class="glass-panel course-glass fade-in-up delay-4">
                 <span class="cg-badge" style="color:var(--oro)">Avanzado</span>
                 <span class="cg-icon" style="text-shadow: 0 0 20px rgba(201,168,76,0.5);">👑</span>
@@ -477,11 +156,27 @@
         </div>
     </section>
 
-    <!-- Proceso & About Glass Grid -->
+    <!-- ═══════ CITA / HISTORIA — Parte 2 ═══════ -->
+    <section class="quote-section">
+      <div class="tribal-bg" style="opacity:0.06;"></div>
+      <div class="quote-container fade-in-up">
+        <div class="quote-icon">❝</div>
+        <p class="quote-text fade-in-up delay-1">
+          Cuando comencé este camino, no sabía hasta dónde podía llegar. Solo tenía un sueño, unas manos dispuestas a
+          crear y una enorme fe en que Dios me estaba guiando. Lo que empezó como un pasatiempo con amigas, se
+          transformó en mi propósito: ayudar a otras personas a descubrir su talento y a brillar con lo que aman hacer.
+        </p>
+        <p class="quote-text fade-in-up delay-2">
+          En mi escuela no solo enseño técnicas, también comparto energía, confianza y la certeza de que cada una de
+          nosotras tiene la capacidad de crecer y transformar su vida. Porque ser profesional de las uñas no es solo un
+          trabajo… es independencia, creatividad y libertad.
+        </p>
+      </div>
+    </section>
+
     <section class="glass-info" id="info">
         <div class="proceso-box fade-in-up">
             <h3 class="serif text-gold-gradient" style="font-size: 2.5rem; margin-bottom: 30px;">¿Cómo funciona?</h3>
-
             <div class="step-g">
                 <div class="step-num-g">01</div>
                 <div>
@@ -513,22 +208,12 @@
         </div>
 
         <div class="glass-panel about-g fade-in-up delay-2">
-            <div style="font-size: 4rem;">👑</div>
-            <h3 class="serif">Nadya Arrieta</h3>
-            <h5>Nail Artist & Instructora</h5>
-            <p>Con años de experiencia en el mundo de las uñas, Nadya creó esta escuela para que cualquier persona pueda
-                aprender desde cero y construir su propio negocio como nail artist profesional.</p>
-
-            <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
-                <span
-                    style="font-size: 0.7rem; border: 1px solid var(--turquesa-light); color: var(--turquesa-light); padding: 4px 10px; border-radius: 50px;">Nail
-                    Art</span>
-                <span
-                    style="font-size: 0.7rem; border: 1px solid var(--turquesa-light); color: var(--turquesa-light); padding: 4px 10px; border-radius: 50px;">Gel
-                    UV</span>
-                <span
-                    style="font-size: 0.7rem; border: 1px solid var(--turquesa-light); color: var(--turquesa-light); padding: 4px 10px; border-radius: 50px;">Business</span>
-            </div>
+            <img src="img/B_JFL-4223.jpg" alt="Nadya Arrieta"
+                style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 16px;">
+            <h3 class="serif" style="color: var(--oro);">El futuro está en tus manos</h3>
+            <p>Si sentís que es tu momento, quiero invitarte a dar el primer paso. Sumate a mi Curso para Principiantes, y descubrí todo lo que sos capaz de lograr.</p>
+            <p style="color: var(--turquesa-light); font-style: italic; margin-top: 12px;">Y yo voy a estar para acompañarte en cada paso de tu transformación.</p>
+            <p style="color: var(--oro); font-family:'Cormorant Garamond',serif; font-size: 1.1rem; margin-top: 8px;">— Nadya Arrieta</p>
         </div>
     </section>
 
@@ -543,8 +228,10 @@
                 style="color:var(--turquesa); text-decoration:none; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.1em;"
                 target="_blank">Instagram @nadyayagie</a>
         </div>
-        <p style="font-size: 0.75rem; color: rgba(255,255,255,0.3);">© 2026 Nadya Arrieta. Todos los derechos
-            reservados.</p>
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; gap: 8px; align-items: center;">
+            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.3); margin: 0;">© 2026 Nadya Arrieta. Todos los derechos reservados.</p>
+            <p style="font-size: 0.7rem; color: rgba(255,255,255,0.2); margin: 0;">Diseño por <a href="https://francoparedes.vercel.app" target="_blank" style="color: var(--turquesa); text-decoration: none;">Franco Paredes</a></p>
+        </div>
     </footer>
 
     <!-- Modal Payment -->

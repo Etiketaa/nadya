@@ -4,407 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nadya Arrieta | Escuela de Uñas (Diseño 1)</title>
+  <title>Nadya Arrieta | Escuela de Uñas Online</title>
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* L1 Specific Styles (Classic Centered Dark Premium) */
-    body {
-      background: var(--esmeralda-dark);
-      color: var(--blanco);
-    }
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 120px 5% 60px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at center, rgba(13, 107, 80, 0.5) 0%, var(--esmeralda-dark) 70%);
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-    }
-
-    .hero-tag {
-      font-size: 0.8rem;
-      letter-spacing: 0.3em;
-      color: var(--turquesa-light);
-      text-transform: uppercase;
-      margin-bottom: 20px;
-      display: block;
-    }
-
-    .hero h1 {
-      font-size: clamp(3.5rem, 8vw, 6.5rem);
-      line-height: 1.1;
-      margin-bottom: 24px;
-      font-weight: 300;
-    }
-
-    .hero h1 span {
-      font-style: italic;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.7);
-      margin-bottom: 40px;
-      font-weight: 300;
-      max-width: 600px;
-      margin-inline: auto;
-    }
-
-    .hero-stats {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-
-    .stat {
-      text-align: center;
-    }
-
-    .stat-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem;
-      font-weight: 600;
-      color: var(--turquesa-light);
-      line-height: 1;
-    }
-
-    .stat-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.45);
-      margin-top: 4px;
-    }
-
-    .video-container {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      max-width: 900px;
-      margin: 40px auto 0;
-      aspect-ratio: 16/9;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      background: #000;
-    }
-
-    .video-container iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    /* Courses Section */
-    .courses-section {
-      padding: 100px 5%;
-      background: var(--esmeralda-deep);
-      position: relative;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-
-    .section-header h2 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 300;
-      margin-bottom: 16px;
-    }
-
-    .section-header p {
-      color: rgba(255, 255, 255, 0.6);
-      font-size: 1rem;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    /* Pack Promo */
-    .pack-featured {
-      max-width: 900px;
-      margin: 0 auto 50px;
-      background: linear-gradient(135deg, rgba(13, 107, 80, 0.4), rgba(8, 77, 56, 0.8));
-      border: 1px solid var(--turquesa);
-      border-radius: 16px;
-      padding: 40px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .pack-info {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    .pack-info h3 {
-      font-size: 2.2rem;
-      color: var(--oro);
-      margin-bottom: 10px;
-    }
-
-    .pack-info p {
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 16px;
-      font-size: 1rem;
-    }
-
-    .pack-badge {
-      display: inline-block;
-      background: var(--turquesa);
-      color: var(--blanco);
-      font-size: 0.7rem;
-      padding: 4px 12px;
-      border-radius: 4px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .pack-price {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem;
-      color: var(--turquesa-light);
-      line-height: 1;
-    }
-
-    /* Grid Cursos */
-    .grid-courses {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .course-card {
-      background: rgba(4, 36, 25, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: all 0.3s;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .course-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(26, 170, 133, 0.3);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    }
-
-    .course-img {
-      aspect-ratio: 4/3;
-      background: linear-gradient(135deg, var(--esmeralda), var(--turquesa-light));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      font-size: 4rem;
-    }
-
-    .course-badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(4px);
-      padding: 4px 10px;
-      font-size: 0.7rem;
-      border-radius: 4px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .course-content {
-      padding: 24px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .course-title {
-      font-size: 1.4rem;
-      font-weight: 500;
-      margin-bottom: 10px;
-      color: var(--blanco);
-    }
-
-    .course-desc {
-      font-size: 0.85rem;
-      color: rgba(255, 255, 255, 0.6);
-      margin-bottom: 20px;
-      flex: 1;
-    }
-
-    .course-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding-top: 16px;
-    }
-
-    .course-price {
-      font-size: 1.35rem;
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 600;
-      color: var(--turquesa-light);
-    }
-
-    .btn-buy {
-      background: transparent;
-      color: var(--blanco);
-      border: 1px solid var(--blanco);
-      padding: 8px 16px;
-      font-size: 0.8rem;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: 0.3s;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .btn-buy:hover {
-      background: var(--blanco);
-      color: var(--esmeralda-dark);
-    }
-
-    /* Proceso y About */
-    .info-section {
-      padding: 100px 5%;
-      background: var(--esmeralda-dark);
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      max-width: 1200px;
-      margin: 0 auto;
-      align-items: start;
-    }
-
-    @media (max-width: 900px) {
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .steps {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
-
-    .step {
-      display: flex;
-      gap: 20px;
-    }
-
-    .step-num {
-      width: 50px;
-      height: 50px;
-      flex-shrink: 0;
-      border: 1px solid var(--turquesa-light);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      color: var(--turquesa-light);
-      background: rgba(26, 170, 133, 0.1);
-    }
-
-    .step h4 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      margin-bottom: 8px;
-      color: var(--blanco);
-    }
-
-    .step p {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.6);
-    }
-
-    .about-card {
-      background: rgba(8, 77, 56, 0.4);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      padding: 40px;
-      text-align: center;
-    }
-
-    .about-avatar {
-      font-size: 4rem;
-      margin-bottom: 16px;
-    }
-
-    .about-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
-      color: var(--oro);
-      margin-bottom: 4px;
-    }
-
-    .about-card h5 {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--turquesa-light);
-      margin-bottom: 24px;
-    }
-
-    .about-card p {
-      font-size: 0.95rem;
-      color: rgba(255, 255, 255, 0.8);
-      line-height: 1.8;
-      margin-bottom: 30px;
-    }
-
-    .pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-    }
-
-    .pill {
-      border: 1px solid rgba(26, 170, 133, 0.4);
-      color: var(--turquesa-light);
-      padding: 6px 14px;
-      font-size: 0.75rem;
-      border-radius: 50px;
-      letter-spacing: 0.05em;
-    }
-  </style>
 </head>
 
 <body>
@@ -418,19 +19,19 @@
       Nadya Arrieta
     </div>
     <div class="nav-links">
+      <a href="#mi-historia">Mi Historia</a>
       <a href="#cursos">Cursos</a>
       <a href="#proceso">Cómo Funciona</a>
-      <a href="#sobre-mi">Sobre Mí</a>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <header class="hero">
     <div class="hero-content">
-      <span class="hero-tag fade-in-up">Escuela de Uñas Profesional</span>
-      <h1 class="fade-in-up delay-1">Domina el <span>Arte de las Uñas</span></h1>
-      <p class="fade-in-up delay-2">Desde principiante hasta avanzada. Aprende con los mejores cursos en video, a tu
-        ritmo, desde donde estés.</p>
+      <span class="hero-tag fade-in-up">✦ Escuela de Uñas Online</span>
+      <h1 class="fade-in-up delay-1">Bienvenidos a mi<br><span>Escuela de Uñas</span></h1>
+      <p class="fade-in-up delay-2">Soy Nadya Arrieta. Desde 2014 convertí mi pasión por las uñas en una carrera
+        exitosa e inspiradora. Hoy quiero compartir todo lo que aprendí con vos.</p>
 
       <div class="hero-stats fade-in-up delay-3">
         <div class="stat">
@@ -448,19 +49,46 @@
       </div>
 
       <button class="btn btn-primary fade-in-up delay-4"
-        onclick="document.getElementById('cursos').scrollIntoView({behavior:'smooth'})">Ver todos los cursos</button>
+        onclick="document.getElementById('cursos').scrollIntoView({behavior:'smooth'})">Ver mis cursos</button>
     </div>
 
-    <div class="video-container fade-in-up delay-4">
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Promocional"></iframe>
+    <div class="video-container fade-in-up delay-4" style="background: transparent; border: none; box-shadow: none;">
+      <img src="img/nadya-hero.jpg" alt="Nadya Arrieta"
+        style="width: 100%; height: auto; border-radius: 16px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
     </div>
   </header>
+
+  <!-- ═══════ MI HISTORIA — Parte 1 ═══════ -->
+  <section class="story-section" id="mi-historia">
+    <div class="story-container">
+      <div class="story-img fade-in-up">
+        <img src="img/B_JFL-4200.jpg" alt="Nadya trabajando">
+      </div>
+      <div class="story-text">
+        <span class="hero-tag fade-in-up">✦ Mi Historia</span>
+        <h2 class="serif text-gold-gradient fade-in-up delay-1">Bienvenidos a mi Escuela de Uñas Online</h2>
+        <p class="fade-in-up delay-2">
+          Soy Nadya Arrieta y desde marzo de 2014 he convertido mi pasión por las uñas en una carrera exitosa e
+          inspiradora. Comencé arreglando las uñas de mis amigas, con mucho temor pero con una fe inquebrantable en que
+          podía lograr la independencia y seguir mi pasión. Hoy, después de muchos años de crecimiento, tengo mi propia
+          escuela, donde formamos profesionales con un enfoque integral en el desarrollo personal, las energías y
+          obviamente la formación profesional necesaria y adecuada.
+        </p>
+        <p class="fade-in-up delay-3">
+          Creo firmemente que todxs podemos alcanzar nuestros sueños, sin importar de dónde venimos. Mi misión es llevar
+          mi conocimiento a todo el mundo con mis cursos online, para que cada persona que llegue a mi escuela se
+          convierta en una profesional de excelencia. ¡Te invito a ser parte de esta comunidad y a expandir tus
+          horizontes con mis cursos y formaciones!
+        </p>
+      </div>
+    </div>
+  </section>
 
   <!-- Cursos Section -->
   <section class="courses-section" id="cursos">
     <div class="section-header fade-in-up">
-      <span class="hero-tag">Elige tu camino</span>
-      <h2 class="text-gold-gradient">Nuestros Cursos</h2>
+      <span class="hero-tag">✦ Elegí tu camino</span>
+      <h2 class="text-gold-gradient">Mis Cursos</h2>
     </div>
 
     <!-- Pack Destacado -->
@@ -481,7 +109,6 @@
 
     <!-- Grilla Individuales -->
     <div class="grid-courses">
-      <!-- Curso 1 -->
       <div class="course-card fade-in-up delay-2">
         <div class="course-img">
           <span class="course-badge" style="color:var(--turquesa-light)">Principiante</span>💅
@@ -496,7 +123,6 @@
         </div>
       </div>
 
-      <!-- Curso 2 -->
       <div class="course-card fade-in-up delay-3">
         <div class="course-img">
           <span class="course-badge">Básico</span>✨
@@ -511,7 +137,6 @@
         </div>
       </div>
 
-      <!-- Curso 3 -->
       <div class="course-card fade-in-up delay-4">
         <div class="course-img">
           <span class="course-badge">Intermedio</span>🌸
@@ -526,7 +151,6 @@
         </div>
       </div>
 
-      <!-- Curso 4 -->
       <div class="course-card fade-in-up">
         <div class="course-img">
           <span class="course-badge" style="color:var(--oro)">Avanzado</span>👑
@@ -543,13 +167,30 @@
     </div>
   </section>
 
-  <!-- Proceso & Sobre Mi -->
-  <section class="info-section">
+  <!-- ═══════ CITA / HISTORIA — Parte 2 ═══════ -->
+  <section class="quote-section">
+    <div class="tribal-bg" style="opacity:0.06;"></div>
+    <div class="quote-container fade-in-up">
+      <div class="quote-icon">❝</div>
+      <p class="quote-text fade-in-up delay-1">
+        Cuando comencé este camino, no sabía hasta dónde podía llegar. Solo tenía un sueño, unas manos dispuestas a
+        crear y una enorme fe en que Dios me estaba guiando. Lo que empezó como un pasatiempo con amigas, se transformó
+        en mi propósito: ayudar a otras personas a descubrir su talento y a brillar con lo que aman hacer.
+      </p>
+      <p class="quote-text fade-in-up delay-2">
+        En mi escuela no solo enseño técnicas, también comparto energía, confianza y la certeza de que cada una de
+        nosotras tiene la capacidad de crecer y transformar su vida. Porque ser profesional de las uñas no es solo un
+        trabajo… es independencia, creatividad y libertad.
+      </p>
+    </div>
+  </section>
+
+  <!-- Proceso -->
+  <section class="info-section" id="proceso">
     <div class="info-grid">
-      <!-- Pasos -->
-      <div class="proceso-box" id="proceso">
+      <div class="proceso-box">
         <div class="section-header fade-in-up" style="text-align: left;">
-          <span class="hero-tag">Simple y rápido</span>
+          <span class="hero-tag">✦ Simple y rápido</span>
           <h2 class="serif text-gold-gradient" style="font-size:3rem;">¿Cómo funciona?</h2>
         </div>
         <div class="steps">
@@ -584,20 +225,23 @@
         </div>
       </div>
 
-      <!-- About -->
+      <!-- CTA Final con invitación -->
       <div class="about-box fade-in-up" id="sobre-mi">
         <div class="about-card">
-          <div class="about-avatar">👑</div>
-          <h3>Nadya Arrieta</h3>
-          <h5>Nail Artist & Instructora</h5>
-          <p>Con años de experiencia en el mundo de las uñas, Nadya creó esta escuela para que cualquier persona pueda
-            aprender desde cero y construir su propio negocio como nail artist profesional.</p>
-          <div class="pills">
-            <span class="pill">Nail Art Avanzado</span>
-            <span class="pill">Gel UV & Acrílico</span>
-            <span class="pill">Diseño Artístico</span>
-            <span class="pill">Emprendimiento</span>
-            <span class="pill">Nail Business</span>
+          <img src="img/B_JFL-4223.jpg" alt="Nadya Arrieta"
+            style="width: 100%; height: 220px; object-fit: cover; border-radius: 12px 12px 0 0;">
+          <div style="padding: 30px; text-align: center;">
+            <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--oro); margin-bottom:12px;">
+              El futuro está en tus manos</h3>
+            <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.8; margin-bottom: 16px;">
+              Si sentís que es tu momento, quiero invitarte a dar el primer paso.
+              Sumate a mi Curso para Principiantes, y descubrí todo lo que sos capaz de lograr.
+            </p>
+            <p style="color: var(--turquesa-light); font-style: italic; font-size: 0.9rem; margin-bottom: 8px;">
+              Y yo voy a estar para acompañarte en cada paso de tu transformación.
+            </p>
+            <p style="color: var(--oro); font-family:'Cormorant Garamond',serif; font-size: 1.1rem;">— Nadya Arrieta
+            </p>
           </div>
         </div>
       </div>
@@ -609,13 +253,15 @@
     <div class="footer-logo serif text-gold-gradient">Nadya Arrieta</div>
     <div
       style="font-size:0.7rem; color:var(--turquesa-light); text-transform:uppercase; letter-spacing:0.15em; margin-bottom: 20px;">
-      Escuela de Uñas Profesional</div>
+      Escuela de Uñas Online</div>
     <div class="footer-links">
       <a href="https://instagram.com/nadyayagie" target="_blank">Instagram @nadyayagie</a>
       <a href="#">Términos y Condiciones</a>
     </div>
-    <p style="font-size: 0.75rem; color: rgba(255,255,255,0.4);">© 2026 Nadya Arrieta. Todos los derechos reservados.
-    </p>
+    <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; gap: 8px; align-items: center;">
+      <p style="font-size: 0.75rem; color: rgba(255,255,255,0.4); margin: 0;">© 2026 Nadya Arrieta. Todos los derechos reservados.</p>
+      <p style="font-size: 0.7rem; color: rgba(255,255,255,0.3); margin: 0;">Diseño por <a href="https://francoparedes.vercel.app" target="_blank" style="color: var(--turquesa-light); text-decoration: none;">Franco Paredes</a></p>
+    </div>
   </footer>
 
   <!-- Modal de Pago Transferencia -->
