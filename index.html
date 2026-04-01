@@ -4,83 +4,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nadya Arrieta | Propuestas de Diseño</title>
+    <title>Nadya Arrieta | Academia de Uñas</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            background: var(--esmeralda-dark);
-            color: #fff;
-            min-height: 100vh;
+        .hub-hero {
+            min-height: 80vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(rgba(8, 77, 56, 0.7), rgba(8, 77, 56, 0.7)), url('img/nadya-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--blanco);
         }
 
-        .index-container {
-            max-width: 1200px;
-            width: 100%;
+        .hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 60px 0;
+        }
+
+        .hub-card {
+            background: var(--crema);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .hub-card:hover {
+            transform: translateY(-10px);
+            background: var(--blanco);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
         }
     </style>
 </head>
 
 <body>
-    <div class="index-container">
-        <div style="text-align:center; margin-bottom:60px;" class="reveal">
-            <h1 class="text-gold-gradient">Nadya Arrieta</h1>
-            <p style="opacity:0.7; max-width:600px; margin:20px auto 0;">Seleccioná una de las 4 propuestas de diseño
-                refaccionadas con el nuevo sistema Flexbox responsive.</p>
+
+    <header class="hub-hero">
+        <div class="container reveal">
+            <h1 style="font-size: clamp(2.5rem, 8vw, 4.5rem);"><span class="text-gold-gradient">Nadya Arrieta</span>
+            </h1>
+            <p style="font-size: 1.2rem; margin-top: 20px; opacity: 0.9;">Selecciona una de nuestras experiencias de
+                aprendizaje</p>
         </div>
+    </header>
 
-        <div class="cards-flex-grid">
-            <div class="flex-card reveal"
-                style="background: rgba(255,255,255,0.05); color:#fff; border-color:rgba(255,255,255,0.1);">
-                <div style="font-family:'Cormorant Garamond', serif; font-size:4rem; color:var(--oro); line-height:1;">
-                    01</div>
-                <h3 style="margin:20px 0;">Clásico & Majestuoso</h3>
-                <p style="opacity:0.6; margin-bottom:30px;">Fondo oscuro, 50/50 Split Hero. Autoridad y elegancia.</p>
-                <a href="landing1.html" class="btn btn-gold" style="width:100%;">Ver Propuesta</a>
-            </div>
-
-            <div class="flex-card reveal delay-1"
-                style="background: rgba(255,255,255,0.05); color:#fff; border-color:rgba(255,255,255,0.1);">
-                <div style="font-family:'Cormorant Garamond', serif; font-size:4rem; color:var(--oro); line-height:1;">
-                    02</div>
-                <h3 style="margin:20px 0;">Moderno & Luminoso</h3>
-                <p style="opacity:0.6; margin-bottom:30px;">Split-Screen asimétrico. Estética fresca y profesional.</p>
-                <a href="landing2.html" class="btn btn-gold" style="width:100%;">Ver Propuesta</a>
-            </div>
-
-            <div class="flex-card reveal delay-2"
-                style="background: rgba(255,255,255,0.05); color:#fff; border-color:rgba(255,255,255,0.1);">
-                <div style="font-family:'Cormorant Garamond', serif; font-size:4rem; color:var(--oro); line-height:1;">
-                    03</div>
-                <h3 style="margin:20px 0;">Inmersivo Tribal</h3>
-                <p style="opacity:0.6; margin-bottom:30px;">Glassmorphism y alternancia Row/Reverse. Alto impacto
-                    visual.</p>
-                <a href="landing3.html" class="btn btn-gold" style="width:100%;">Ver Propuesta</a>
-            </div>
-
-            <div class="flex-card reveal delay-3"
-                style="background: rgba(255,255,255,0.05); color:#fff; border-color:rgba(255,255,255,0.1);">
-                <div style="font-family:'Cormorant Garamond', serif; font-size:4rem; color:var(--oro); line-height:1;">
-                    04</div>
-                <h3 style="margin:20px 0;">Bloques Estructurados</h3>
-                <p style="opacity:0.6; margin-bottom:30px;">Secciones claras con fondos alternantes. Orden y
-                    profesionalismo.</p>
-                <a href="landing4.html" class="btn btn-gold" style="width:100%;">Ver Propuesta</a>
-            </div>
+    <main class="container">
+        <div class="hub-grid">
+            <a href="landing1.html" class="hub-card reveal">
+                <h3 style="color:var(--esmeralda-deep);">Experiencia Minimal</h3>
+                <p style="margin-top:15px; color:var(--texto-medio);">Diseño limpio y enfocado.</p>
+                <span class="btn btn-primary" style="margin-top:25px; display:inline-block;">Explorar</span>
+            </a>
+            <a href="landing2.html" class="hub-card reveal delay-1">
+                <h3 style="color:var(--esmeralda-deep);">Experiencia Split</h3>
+                <p style="margin-top:15px; color:var(--texto-medio);">Impacto visual compartido.</p>
+                <span class="btn btn-primary" style="margin-top:25px; display:inline-block;">Explorar</span>
+            </a>
+            <a href="landing3.html" class="hub-card reveal delay-2">
+                <h3 style="color:var(--esmeralda-deep);">Experiencia Master</h3>
+                <p style="margin-top:15px; color:var(--texto-medio);">Enfocada en conversiones.</p>
+                <span class="btn btn-primary" style="margin-top:25px; display:inline-block;">Explorar</span>
+            </a>
+            <a href="landing4.html" class="hub-card reveal">
+                <h3 style="color:var(--esmeralda-deep);">Experiencia Standard</h3>
+                <p style="margin-top:15px; color:var(--texto-medio);">Clásica y profesional.</p>
+                <span class="btn btn-primary" style="margin-top:25px; display:inline-block;">Explorar</span>
+            </a>
         </div>
+    </main>
 
-        <footer style="margin-top:80px; text-align:center; opacity:0.8;">
-            <p style="margin-bottom:10px; font-size:0.9rem;">
-                Sitio diseñado por <a href="https://francoparedes.vercel.app" target="_blank"
-                    style="color:var(--oro); font-weight:600; text-decoration:none;">Franco Paredes</a>
-            </p>
-            <p style="opacity:0.4; font-size:0.7rem;">© 2026</p>
-        </footer>
-    </div>
+    <footer style="text-align:center; padding: 60px 40px; color:rgba(0,0,0,0.5);">
+        <p style="margin-bottom:15px; font-size:0.9rem;">
+            Sitio diseñado por <a href="https://francoparedes.vercel.app" target="_blank"
+                style="color:var(--esmeralda-deep); font-weight:600; text-decoration:none;">Franco Paredes</a> | <a
+                href="legales.html" style="color:inherit; text-decoration:none; opacity:0.6;">Términos y Legales</a>
+        </p>
+        © 2026 Academia Nadya Arrieta
+    </footer>
 
     <script src="main.js"></script>
 </body>
