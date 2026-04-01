@@ -1,5 +1,5 @@
 /** Base & Variables **/
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500;600&family=Outfit:wght@200;300;400;500;600&display=swap');
 
 :root {
   --esmeralda: #0d6b50;
@@ -24,7 +24,7 @@
 }
 
 body {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: var(--crema);
   color: var(--texto-oscuro);
   overflow-x: hidden;
@@ -36,6 +36,12 @@ h2,
 h3,
 h4,
 .serif {
+  font-family: 'Poppins', sans-serif;
+  /* Títulos con impacto */
+  font-weight: 700;
+}
+
+.cormorant {
   font-family: 'Cormorant Garamond', serif;
 }
 
@@ -49,13 +55,26 @@ ul {
 }
 
 /* Micro-animations & utilities */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .fade-in-up {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.fade-in-up.is-visible {
+.fade-in-up.is-visible,
+.fade-in-up.visible {
+  /* Support both classes to keep compatibility while transitioning */
   opacity: 1;
   transform: translateY(0);
 }
@@ -79,12 +98,14 @@ ul {
 .text-gradient {
   background: linear-gradient(135deg, var(--turquesa-light), var(--turquesa), var(--esmeralda));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gold-gradient {
   background: linear-gradient(135deg, var(--oro-light), var(--oro));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -102,39 +123,51 @@ ul {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 28px;
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border-radius: 50px;
+  padding: 12px 32px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
   position: relative;
-  overflow: hidden;
+  text-decoration: none;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--turquesa-light), var(--turquesa));
-  color: var(--esmeralda-dark);
-  box-shadow: 0 8px 24px rgba(26, 170, 133, 0.3);
+  background: #000;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(26, 170, 133, 0.5);
+  background: #222;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-gold {
+  background: var(--oro);
+  color: var(--esmeralda-dark);
+  box-shadow: 0 4px 14px rgba(201, 168, 76, 0.3);
+}
+
+.btn-gold:hover {
+  background: var(--oro-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.4);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--turquesa-light);
-  border: 1px solid var(--turquesa);
+  color: inherit;
+  border: 1px solid currentColor;
 }
 
 .btn-outline:hover {
-  background: rgba(26, 170, 133, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
 }
 
@@ -222,8 +255,18 @@ nav.scrolled {
   transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.modal-overlay.active .modal-content {
-  transform: scale(1) translateY(0);
+.about-img-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+
+.about-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .modal-close {
@@ -263,10 +306,25 @@ nav.scrolled {
   color: var(--esmeralda-deep);
 }
 
+/* Card Utility */
+.card {
+  background: var(--blanco);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
 /* Responsive Grid Base */
 .grid-courses {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 30px;
 }
 
@@ -357,35 +415,41 @@ footer {
 
 .story-container {
   display: grid;
-  grid-template-columns: 420px 1fr;
-  gap: 60px;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
   max-width: 1200px;
   margin: 0 auto;
   align-items: center;
+  /* Vertical center alignment */
 }
 
 .story-img {
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
 }
 
 .story-img img {
   width: 100%;
-  height: 480px;
+  aspect-ratio: 4/5;
+  /* Aspect ratio más elegante para retratos */
   object-fit: cover;
+  object-position: center 20%;
+  /* Ajustar para que no corte la cabeza si es necesario */
   display: block;
 }
 
 .story-text h2 {
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
   margin-bottom: 24px;
-  line-height: 1.15;
+  line-height: 1.1;
+  font-weight: 700;
 }
 
 .story-text p {
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.95rem;
   line-height: 1.9;
   margin-bottom: 16px;
@@ -444,7 +508,7 @@ footer {
 
 .quote-text {
   font-size: 1.1rem;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
   line-height: 2;
   font-style: italic;
   margin-bottom: 20px;
@@ -489,8 +553,17 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(13, 107, 80, 0.5) 0%, var(--esmeralda-dark) 70%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('img/nadya-hero.jpg');
+  background-size: cover;
+  background-position: center;
   z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -510,10 +583,11 @@ body {
 }
 
 .hero h1 {
-  font-size: clamp(2rem, 8vw, 6rem);
-  line-height: 1.1;
+  font-size: clamp(3rem, 10vw, 5.5rem);
+  line-height: 1.05;
   margin-bottom: 24px;
-  font-weight: 300;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .hero h1 span {
@@ -764,10 +838,28 @@ nav.scrolled .nav-links a:hover {
   font-style: italic;
 }
 
-.hero-split-text p {
-  font-size: 1.1rem;
-  color: var(--texto-medio);
-  margin-bottom: 40px;
+/* L2 Specific Styles Improvements */
+.course-row {
+  background: var(--blanco);
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.course-row:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.pack-l2 {
+  background: var(--esmeralda-dark);
+  color: var(--blanco);
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
 }
 
 /* Floating Video Promo */
@@ -1518,10 +1610,24 @@ nav {
 }
 
 /* ── CURSOS SECTION ── */
+/* Landing 4 Section Alternation */
+.page-wrapper section:nth-child(even) {
+  background: #f4f6f5;
+  /* Very soft emerald-tinted light gray */
+}
+
+.page-wrapper section:nth-child(odd) {
+  background: var(--blanco);
+}
+
+.page-wrapper .hero {
+  background: var(--esmeralda-dark);
+  color: var(--blanco);
+}
+
 .section-cursos {
-  padding: 80px 24px;
+  padding: 100px 5%;
   position: relative;
-  background: var(--crema);
 }
 
 .section-header {
@@ -1829,6 +1935,7 @@ nav {
 
 .section-proceso .section-tag {
   color: var(--turquesa-light);
+  font-weight: 600;
 }
 
 .section-proceso .dl {
@@ -1875,7 +1982,9 @@ nav {
   z-index: 1;
 }
 
-.step-content {}
+.step-content {
+  flex: 1;
+}
 
 .step-title {
   font-family: 'Cormorant Garamond', serif;

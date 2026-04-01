@@ -27,11 +27,12 @@
 
   <!-- Hero Section -->
   <header class="hero">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <span class="hero-tag fade-in-up">✦ Escuela de Uñas Online</span>
-      <h1 class="fade-in-up delay-1">Bienvenidos a mi<br><span>Escuela de Uñas</span></h1>
-      <p class="fade-in-up delay-2">Soy Nadya Arrieta. Desde 2014 convertí mi pasión por las uñas en una carrera
-        exitosa e inspiradora. Hoy quiero compartir todo lo que aprendí con vos.</p>
+      <span class="hero-tag reveal">✦ Escuela de Uñas Online</span>
+      <h1 class="reveal delay-1">Domina el Arte de las <span>Uñas</span></h1>
+      <p class="reveal delay-2">Transformá tu pasión en una carrera exitosa. Aprendé técnicas profesionales con Nadya
+        Arrieta desde cualquier lugar del mundo.</p>
 
       <div class="hero-stats fade-in-up delay-3">
         <div class="stat">
@@ -48,14 +49,12 @@
         </div>
       </div>
 
-      <button class="btn btn-primary fade-in-up delay-4"
+      <button class="btn btn-gold btn-large reveal delay-4"
         onclick="document.getElementById('cursos').scrollIntoView({behavior:'smooth'})">Ver mis cursos</button>
     </div>
 
-    <div class="video-container fade-in-up delay-4" style="background: transparent; border: none; box-shadow: none;">
-      <img src="img/nadya-hero.jpg" alt="Nadya Arrieta"
-        style="width: 100%; height: auto; border-radius: 16px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
-    </div>
+    <!-- Botón de scroll o espacio para evitar que el contenido choque con el fondo -->
+    <div style="height: 40px;"></div>
   </header>
 
   <!-- ═══════ MI HISTORIA — Parte 1 ═══════ -->
@@ -228,8 +227,9 @@
       <!-- CTA Final con invitación -->
       <div class="about-box fade-in-up" id="sobre-mi">
         <div class="about-card">
-          <img src="img/B_JFL-4223.jpg" alt="Nadya Arrieta"
-            style="width: 100%; height: 220px; object-fit: cover; border-radius: 12px 12px 0 0;">
+          <div class="about-img-container">
+            <img src="img/B_JFL-4223.jpg" alt="Nadya Arrieta">
+          </div>
           <div style="padding: 30px; text-align: center;">
             <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--oro); margin-bottom:12px;">
               El futuro está en tus manos</h3>
@@ -258,9 +258,13 @@
       <a href="https://instagram.com/nadyayagie" target="_blank">Instagram @nadyayagie</a>
       <a href="#">Términos y Condiciones</a>
     </div>
-    <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; gap: 8px; align-items: center;">
-      <p style="font-size: 0.75rem; color: rgba(255,255,255,0.4); margin: 0;">© 2026 Nadya Arrieta. Todos los derechos reservados.</p>
-      <p style="font-size: 0.7rem; color: rgba(255,255,255,0.3); margin: 0;">Diseño por <a href="https://francoparedes.vercel.app" target="_blank" style="color: var(--turquesa-light); text-decoration: none;">Franco Paredes</a></p>
+    <div
+      style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; gap: 8px; align-items: center;">
+      <p style="font-size: 0.75rem; color: rgba(255,255,255,0.4); margin: 0;">© 2026 Nadya Arrieta. Todos los derechos
+        reservados.</p>
+      <p style="font-size: 0.7rem; color: rgba(255,255,255,0.3); margin: 0;">Diseño por <a
+          href="https://francoparedes.vercel.app" target="_blank"
+          style="color: var(--turquesa-light); text-decoration: none;">Franco Paredes</a></p>
     </div>
   </footer>
 

@@ -12,25 +12,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Intersection Observer para Animaciones en Scroll (.fade-in-up)
-    const fadeElements = document.querySelectorAll('.fade-in-up');
+    // 2. Intersection Observer para Animaciones en Scroll (.reveal, .fade-in-up)
+    const revealElements = document.querySelectorAll('.reveal, .fade-in-up');
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.15 // 15% del elemento visible para desencadenar
+        threshold: 0.15
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Mantener compatibilidad con is-visible si se usa en CSS antiguo
                 entry.target.classList.add('is-visible');
-            } else {
-                entry.target.classList.remove('is-visible');
             }
         });
     }, observerOptions);
 
-    fadeElements.forEach(el => observer.observe(el));
+    revealElements.forEach(el => observer.observe(el));
 
     // 3. Lógica del Modal de Pago
     const modal = document.getElementById('paymentModal');
