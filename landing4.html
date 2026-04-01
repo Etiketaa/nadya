@@ -17,6 +17,7 @@
     <div class="nav-links">
       <a href="#cursos">Cursos</a>
       <a href="#sobre-mi">Sobre Mi</a>
+      <a href="#proposito">Propósito</a>
     </div>
   </nav>
 
@@ -36,125 +37,8 @@
     </div>
   </header>
 
-  <section id="cursos" class="section-alt">
-    <div class="container">
-      <div style="text-align:center; margin-bottom:60px;" class="reveal">
-        <h2 style="color:var(--esmeralda-deep);">9 Capacitaciones Master</h2>
-      </div>
-      <div class="cards-flex-grid">
-        <!-- 1 -->
-        <div class="flex-card reveal">
-          <img src="https://images.pexels.com/photos/34871553/pexels-photo-34871553.jpeg" class="card-img" alt="C1">
-          <div class="card-content">
-            <h3>Uñas Esculpidas</h3>
-            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Técnica base profesional.</p>
-            <div class="flex" style="justify-content:space-between; align-items:center;">
-              <span style="font-weight:700; color:var(--esmeralda);">$39 USD</span>
-              <button class="btn btn-primary" onclick="openPaymentModal('Uñas Esculpidas', '39 USD')">Comprar</button>
-            </div>
-          </div>
-        </div>
-        <!-- 2 -->
-        <div class="flex-card reveal delay-1">
-          <img src="https://images.pexels.com/photos/4783259/pexels-photo-4783259.jpeg" class="card-img" alt="C2">
-          <div class="card-content">
-            <h3>Capacitación de Gel UV</h3>
-            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Sistemas de gel avanzado.</p>
-            <div class="flex" style="justify-content:space-between; align-items:center;">
-              <span style="font-weight:700; color:var(--esmeralda);">$45 USD</span>
-              <button class="btn btn-primary" onclick="openPaymentModal('Gel UV', '45 USD')">Comprar</button>
-            </div>
-          </div>
-        </div>
-        <!-- 3 -->
-        <div class="flex-card reveal delay-2">
-          <img src="https://images.pexels.com/photos/4677846/pexels-photo-4677846.jpeg" class="card-img" alt="C3">
-          <div class="card-content">
-            <h3>Semipermanente Pro</h3>
-            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Ideal para esmaltado duradero.</p>
-            <div class="flex" style="justify-content:space-between; align-items:center;">
-              <span style="font-weight:700; color:var(--esmeralda);">$29 USD</span>
-              <button class="btn btn-primary" onclick="openPaymentModal('Semipermanente', '29 USD')">Comprar</button>
-            </div>
-          </div>
-        </div>
-        <!-- 4 -->
-        <div class="flex-card reveal">
-          <img src="https://images.pexels.com/photos/17471377/pexels-photo-17471377.jpeg" class="card-img" alt="C4">
-          <div class="card-content">
-            <h3>Nail Art Floral</h3>
-            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Diseño artístico a mano alzada.</p>
-            <div class="flex" style="justify-content:space-between; align-items:center;">
-              <span style="font-weight:700; color:var(--esmeralda);">$35 USD</span>
-              <button class="btn btn-primary" onclick="openPaymentModal('Nail Art', '35 USD')">Comprar</button>
-            </div>
-          </div>
-        </div>
-        <!-- 5 -->
-        <div class="flex-card reveal delay-1">
-          <img src="https://images.pexels.com/photos/4677853/pexels-photo-4677853.jpeg" class="card-img" alt="C5">
-          <div class="card-content">
-            <h3>Manicuría Combinada</h3>
-            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Técnica avanzada de manicuría.</p>
-            <div class="flex" style="justify-content:space-between; align-items:center;">
-              <span style="font-weight:700; color:var(--esmeralda);">$49 USD</span>
-              <button class="btn btn-primary" onclick="openPaymentModal('Manicuría', '49 USD')">Comprar</button>
-            </div>
-          </div>
-        </div>
-        <!-- 6 -->
-        <div class="flex-card reveal delay-2">
-          <img src="https://images.pexels.com/photos/3997360/pexels-photo-3997360.jpeg" class="card-img" alt="C6">
-          <div class="card-content">
-            <h3>Diseño 3D Artistic</h3>
-            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Relieve y escultura de uña.</p>
-            <div class="flex" style="justify-content:space-between; align-items:center;">
-              <span style="font-weight:700; color:var(--esmeralda);">$55 USD</span>
-              <button class="btn btn-primary" onclick="openPaymentModal('3D Art', '55 USD')">Comprar</button>
-            </div>
-          </div>
-        </div>
-        <!-- 7 -->
-        <div class="flex-card reveal">
-          <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=800" class="card-img" alt="C7">
-          <div class="card-content">
-            <h3>Soft Gel Academy</h3>
-            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Velocidad técnica comercial.</p>
-            <div class="flex" style="justify-content:space-between; align-items:center;">
-              <span style="font-weight:700; color:var(--esmeralda);">$32 USD</span>
-              <button class="btn btn-primary" onclick="openPaymentModal('Soft Gel', '32 USD')">Comprar</button>
-            </div>
-          </div>
-        </div>
-        <!-- 8 -->
-        <div class="flex-card reveal delay-1">
-          <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=800" class="card-img" alt="C8">
-          <div class="card-content">
-            <h3>Acrílico Pro</h3>
-            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Perfeccionamiento técnica acrílica.</p>
-            <div class="flex" style="justify-content:space-between; align-items:center;">
-              <span style="font-weight:700; color:var(--esmeralda);">$59 USD</span>
-              <button class="btn btn-primary" onclick="openPaymentModal('Acrílico', '59 USD')">Comprar</button>
-            </div>
-          </div>
-        </div>
-        <!-- 9 -->
-        <div class="flex-card reveal delay-2">
-          <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=800" class="card-img" alt="C9">
-          <div class="card-content">
-            <h3>Química Técnica</h3>
-            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Fundamentos teóricos esenciales.</p>
-            <div class="flex" style="justify-content:space-between; align-items:center;">
-              <span style="font-weight:700; color:var(--esmeralda);">$25 USD</span>
-              <button class="btn btn-primary" onclick="openPaymentModal('Química', '25 USD')">Comprar</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="sobre-mi">
+  <!-- SOBRE MI -->
+  <section id="sobre-mi" class="section-alt">
     <div class="container reveal">
       <div class="story-block">
         <div class="flex-1">
@@ -163,16 +47,136 @@
           </div>
         </div>
         <div class="flex-1">
-          <h2 style="color:var(--esmeralda-deep); margin-bottom:20px;">Mi Filosofía</h2>
+          <h2 style="color:var(--esmeralda-deep); margin-bottom:20px;">Bienvenidos a mi Escuela</h2>
           <p style="color:var(--texto-medio); line-height:1.8; margin-bottom:20px;">
             Soy Nadya Arrieta y desde marzo de 2014 he convertido mi pasión por las uñas en una carrera exitosa e
-            inspiradora. Comencé arreglando las uñas de mis amigas con fe inquebrantable. Hoy formamos profesionales con
-            un enfoque integral.
+            inspiradora. Comencé arreglando las uñas de mis amigas, con mucho temor pero con una fe inquebrantable en
+            que podía lograr la independencia y seguir mi pasión. Hoy formamos profesionales con un enfoque integral.
           </p>
-          <p style="color:var(--texto-medio); line-height:1.8; margin-bottom:30px;">
-            Creo firmemente que todxs podemos alcanzar nuestros sueños. Mi misión es llevar mi conocimiento a todo el
-            mundo con mis cursos online. ¡Te invito a ser parte de esta comunidad!
+          <p style="color:var(--texto-medio); line-height:1.8;">
+            Mi misión es llevar mi conocimiento a todo el mundo con mis cursos online, para que cada persona que llegue
+            a mi escuela se convierta en una profesional de excelencia.
           </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPOSITO -->
+  <section id="proposito" class="section-dark">
+    <div class="container" style="text-align:center; max-width:850px;">
+      <div class="reveal">
+        <h2 style="color:var(--oro); margin-bottom:30px;">Mi Propósito</h2>
+        <p style="font-size:1.2rem; line-height:1.8; margin-bottom:30px;">
+          “Cuando comencé este camino, no sabía hasta dónde podía llegar. Solo tenía un sueño, unas manos dispuestas a
+          crear y una enorme fe en que Dios me estaba guiando. Lo que empezó como un pasatiempo con amigas, se
+          transformó en mi propósito: ayudar a otras personas a descubrir su talento y a brillar con lo que aman hacer."
+        </p>
+        <p style="opacity:0.7; line-height:1.8;">
+          En mi escuela no solo enseño técnicas, también comparto energía, confianza y la certeza de que cada una de
+          nosotras tiene la capacidad de crecer y transformar su vida.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cursos" class="section-alt">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:60px;" class="reveal">
+        <h2 style="color:var(--esmeralda-deep);">Formaciones Master</h2>
+      </div>
+      <div class="cards-flex-grid">
+        <!-- Cards integration -->
+        <div class="flex-card reveal"><img src="https://images.pexels.com/photos/34871553/pexels-photo-34871553.jpeg"
+            class="card-img" alt="C1">
+          <div class="card-content">
+            <h3>Uñas Esculpidas</h3>
+            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Técnica base profesional.</p>
+            <div class="flex" style="justify-content:space-between; align-items:center;"><span
+                style="font-weight:700; color:var(--esmeralda);">$39 USD</span><button class="btn btn-primary"
+                onclick="openPaymentModal('Uñas Esculpidas', '39 USD')">Comprar</button></div>
+          </div>
+        </div>
+        <div class="flex-card reveal delay-1"><img
+            src="https://images.pexels.com/photos/4783259/pexels-photo-4783259.jpeg" class="card-img" alt="C2">
+          <div class="card-content">
+            <h3>Capacitación Gel UV</h3>
+            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Sistemas avanzados.</p>
+            <div class="flex" style="justify-content:space-between; align-items:center;"><span
+                style="font-weight:700; color:var(--esmeralda);">$45 USD</span><button class="btn btn-primary"
+                onclick="openPaymentModal('Gel UV', '45 USD')">Comprar</button></div>
+          </div>
+        </div>
+        <!-- ... -->
+        <div class="flex-card reveal delay-2"><img
+            src="https://images.pexels.com/photos/4677846/pexels-photo-4677846.jpeg" class="card-img" alt="C3">
+          <div class="card-content">
+            <h3>Semipermanente Pro</h3>
+            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Duración impecable.</p>
+            <div class="flex" style="justify-content:space-between; align-items:center;"><span
+                style="font-weight:700; color:var(--esmeralda);">$29 USD</span><button class="btn btn-primary"
+                onclick="openPaymentModal('Semipermanente', '29 USD')">Comprar</button></div>
+          </div>
+        </div>
+        <div class="flex-card reveal"><img src="https://images.pexels.com/photos/17471377/pexels-photo-17471377.jpeg"
+            class="card-img" alt="C4">
+          <div class="card-content">
+            <h3>Nail Art Floral</h3>
+            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Mano alzada.</p>
+            <div class="flex" style="justify-content:space-between; align-items:center;"><span
+                style="font-weight:700; color:var(--esmeralda);">$35 USD</span><button class="btn btn-primary"
+                onclick="openPaymentModal('Nail Art', '35 USD')">Comprar</button></div>
+          </div>
+        </div>
+        <div class="flex-card reveal delay-1"><img
+            src="https://images.pexels.com/photos/4677853/pexels-photo-4677853.jpeg" class="card-img" alt="C5">
+          <div class="card-content">
+            <h3>Manicuría Rusa</h3>
+            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Perfeccionamiento.</p>
+            <div class="flex" style="justify-content:space-between; align-items:center;"><span
+                style="font-weight:700; color:var(--esmeralda);">$49 USD</span><button class="btn btn-primary"
+                onclick="openPaymentModal('Manicuría', '49 USD')">Comprar</button></div>
+          </div>
+        </div>
+        <div class="flex-card reveal delay-2"><img
+            src="https://images.pexels.com/photos/3997360/pexels-photo-3997360.jpeg" class="card-img" alt="C6">
+          <div class="card-content">
+            <h3>3D Art Artist</h3>
+            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Relieve artístico.</p>
+            <div class="flex" style="justify-content:space-between; align-items:center;"><span
+                style="font-weight:700; color:var(--esmeralda);">$55 USD</span><button class="btn btn-primary"
+                onclick="openPaymentModal('3D Art', '55 USD')">Comprar</button></div>
+          </div>
+        </div>
+        <div class="flex-card reveal"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=800"
+            class="card-img" alt="C7">
+          <div class="card-content">
+            <h3>Soft Gel Academy</h3>
+            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Velocidad técnica.</p>
+            <div class="flex" style="justify-content:space-between; align-items:center;"><span
+                style="font-weight:700; color:var(--esmeralda);">$32 USD</span><button class="btn btn-primary"
+                onclick="openPaymentModal('Soft Gel', '32 USD')">Comprar</button></div>
+          </div>
+        </div>
+        <div class="flex-card reveal delay-1"><img
+            src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=800" class="card-img" alt="C8">
+          <div class="card-content">
+            <h3>Acrílico Pro</h3>
+            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Control total.</p>
+            <div class="flex" style="justify-content:space-between; align-items:center;"><span
+                style="font-weight:700; color:var(--esmeralda);">$59 USD</span><button class="btn btn-primary"
+                onclick="openPaymentModal('Acrílico', '59 USD')">Comprar</button></div>
+          </div>
+        </div>
+        <div class="flex-card reveal delay-2"><img
+            src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=800" class="card-img" alt="C9">
+          <div class="card-content">
+            <h3>Química Técnica</h3>
+            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Teoría profesional.</p>
+            <div class="flex" style="justify-content:space-between; align-items:center;"><span
+                style="font-weight:700; color:var(--esmeralda);">$25 USD</span><button class="btn btn-primary"
+                onclick="openPaymentModal('Química', '25 USD')">Comprar</button></div>
+          </div>
         </div>
       </div>
     </div>

@@ -23,6 +23,12 @@
             padding: 40px;
             margin-top: 40px;
         }
+
+        .quote-box {
+            border-left: 4px solid var(--oro);
+            padding-left: 30px;
+            margin: 40px 0;
+        }
     </style>
 </head>
 
@@ -34,8 +40,8 @@
         </div>
         <div class="nav-links">
             <a href="#bundle">El Pack</a>
+            <a href="#mi-historia">Mi Historia</a>
             <a href="#cursos">Cursos</a>
-            <a href="#mi-historia">Sobre Mí</a>
         </div>
     </nav>
 
@@ -52,7 +58,7 @@
                             style="padding:4px 12px; font-size:0.7rem; margin-bottom:15px; display:inline-block;">★
                             ACADEMIA</span>
                         <h3>Pack Master 9 en 1</h3>
-                        <p style="opacity:0.8; margin-top:10px;">Toda la formación con acceso ilimitado.</p>
+                        <p style="opacity:0.8; margin-top:10px;">Acceso inmediato a toda la formación.</p>
                     </div>
                     <div class="flex-mobile-center" style="text-align:right;">
                         <span style="text-decoration:line-through; opacity:0.5; margin-right:15px;">$299 USD</span>
@@ -67,14 +73,63 @@
         </div>
     </header>
 
+    <!-- MI HISTORIA (INTRO) -->
+    <section id="mi-historia" class="section-alt">
+        <div class="container">
+            <div class="story-block reveal">
+                <div class="flex-1">
+                    <img src="img/B_JFL-4200.jpg" alt="Nadya"
+                        style="border-radius:20px; box-shadow:0 30px 60px rgba(0,0,0,0.1);">
+                </div>
+                <div class="flex-1">
+                    <h2 style="color:var(--esmeralda-deep); margin-bottom:20px;">Bienvenidos a mi Escuela de Uñas Online
+                    </h2>
+                    <p style="color:var(--texto-medio); line-height:1.8; margin-bottom:20px;">
+                        Soy Nadya Arrieta y desde marzo de 2014 he convertido mi pasión por las uñas en una carrera
+                        exitosa e inspiradora. Comencé arreglando las uñas de mis amigas, con mucho temor pero con una
+                        fe inquebrantable en que podía lograr la independencia y seguir mi pasión.
+                    </p>
+                    <p style="color:var(--texto-medio); line-height:1.8;">
+                        Hoy formamos profesionales con un enfoque integral en el desarrollo personal, las energías y
+                        obviamente la formación Profesional necesaria y adecuada. Mi misión es llevar mi conocimiento a
+                        todo el mundo con mis cursos online.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTE SECTION -->
+    <section class="section-dark">
+        <div class="container" style="max-width:900px;">
+            <div class="reveal">
+                <div class="quote-box">
+                    <p style="font-size:1.3rem; font-style:italic; line-height:1.8; margin-bottom:20px;">
+                        “Cuando comencé este camino, no sabía hasta dónde podía llegar. Solo tenía un sueño, unas manos
+                        dispuestas a crear y una enorme fe en que Dios me estaba guiando. Lo que empezó como un
+                        pasatiempo con amigas, se transformó en mi propósito: ayudar a otras personas a descubrir su
+                        talento y a brillar con lo que aman hacer."
+                    </p>
+                </div>
+                <p style="opacity:0.8; line-height:1.8;">
+                    En mi escuela no solo enseño técnicas, también comparto energía, confianza y la certeza de que cada
+                    una de nosotras tiene la capacidad de transformar su vida. Ser profesional de las uñas es
+                    independencia, creatividad y libertad.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <section id="cursos" class="section-alt">
         <div class="container">
             <div style="text-align:center; margin-bottom:60px;" class="reveal">
                 <h2 style="color:var(--esmeralda-deep);">Catalogo de Capacitaciones</h2>
+                <p style="margin-top:20px; color:var(--texto-medio);">El futuro está en tus manos, y yo voy a estar para
+                    acompañarte.</p>
             </div>
 
             <div class="cards-flex-grid">
-                <!-- 1 -->
+                <!-- Cards 1-9 -->
                 <div class="flex-card reveal">
                     <img src="https://images.pexels.com/photos/34871553/pexels-photo-34871553.jpeg" class="card-img"
                         alt="C1">
@@ -88,114 +143,100 @@
                         </div>
                     </div>
                 </div>
-                <!-- 2 -->
-                <div class="flex-card reveal delay-1">
-                    <img src="https://images.pexels.com/photos/4783259/pexels-photo-4783259.jpeg" class="card-img"
+                <!-- ... (cards 2-9 follow same pattern) -->
+                <div class="flex-card reveal delay-1"><img
+                        src="https://images.pexels.com/photos/4783259/pexels-photo-4783259.jpeg" class="card-img"
                         alt="C2">
                     <div class="card-content">
-                        <h3>Capacitación Gel UV</h3>
-                        <p style="margin:10px 0; color:var(--texto-medio); flex:1;">Construcción y esmaltado perfecto.
-                        </p>
-                        <div class="flex" style="justify-content:space-between; align-items:center;">
-                            <span style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$45 USD</span>
-                            <button class="btn btn-primary" onclick="openPaymentModal('Gel UV', '45 USD')">Ver</button>
+                        <h3>Capacitación de Gel UV</h3>
+                        <p style="margin:10px 0; color:var(--texto-medio); flex:1;">Construcción y esmaltado.</p>
+                        <div class="flex" style="justify-content:space-between; align-items:center;"><span
+                                style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$45 USD</span><button
+                                class="btn btn-primary" onclick="openPaymentModal('Gel UV', '45 USD')">Ver</button>
                         </div>
                     </div>
                 </div>
-                <!-- 3 -->
-                <div class="flex-card reveal delay-2">
-                    <img src="https://images.pexels.com/photos/4677846/pexels-photo-4677846.jpeg" class="card-img"
+                <div class="flex-card reveal delay-2"><img
+                        src="https://images.pexels.com/photos/4677846/pexels-photo-4677846.jpeg" class="card-img"
                         alt="C3">
                     <div class="card-content">
                         <h3>Semipermanente Pro</h3>
-                        <p style="margin:10px 0; color:var(--texto-medio); flex:1;">El servicio estrella del salón.</p>
-                        <div class="flex" style="justify-content:space-between; align-items:center;">
-                            <span style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$29 USD</span>
-                            <button class="btn btn-primary"
-                                onclick="openPaymentModal('Semipermanente', '29 USD')">Ver</button>
-                        </div>
+                        <p style="margin:10px 0; color:var(--texto-medio); flex:1;">Servicio estrella del salón.</p>
+                        <div class="flex" style="justify-content:space-between; align-items:center;"><span
+                                style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$29 USD</span><button
+                                class="btn btn-primary"
+                                onclick="openPaymentModal('Semipermanente', '29 USD')">Ver</button></div>
                     </div>
                 </div>
-                <!-- 4 -->
-                <div class="flex-card reveal">
-                    <img src="https://images.pexels.com/photos/17471377/pexels-photo-17471377.jpeg" class="card-img"
+                <div class="flex-card reveal"><img
+                        src="https://images.pexels.com/photos/17471377/pexels-photo-17471377.jpeg" class="card-img"
                         alt="C4">
                     <div class="card-content">
                         <h3>Nail Art Floral</h3>
                         <p style="margin:10px 0; color:var(--texto-medio); flex:1;">Diseños a mano alzada.</p>
-                        <div class="flex" style="justify-content:space-between; align-items:center;">
-                            <span style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$35 USD</span>
-                            <button class="btn btn-primary"
-                                onclick="openPaymentModal('Nail Art', '35 USD')">Ver</button>
+                        <div class="flex" style="justify-content:space-between; align-items:center;"><span
+                                style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$35 USD</span><button
+                                class="btn btn-primary" onclick="openPaymentModal('Nail Art', '35 USD')">Ver</button>
                         </div>
                     </div>
                 </div>
-                <!-- 5 -->
-                <div class="flex-card reveal delay-1">
-                    <img src="https://images.pexels.com/photos/4677853/pexels-photo-4677853.jpeg" class="card-img"
+                <div class="flex-card reveal delay-1"><img
+                        src="https://images.pexels.com/photos/4677853/pexels-photo-4677853.jpeg" class="card-img"
                         alt="C5">
                     <div class="card-content">
                         <h3>Manicuría Rusa</h3>
-                        <p style="margin:10px 0; color:var(--texto-medio); flex:1;">Preparación profunda y técnica.</p>
-                        <div class="flex" style="justify-content:space-between; align-items:center;">
-                            <span style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$49 USD</span>
-                            <button class="btn btn-primary"
-                                onclick="openPaymentModal('Manicuría', '49 USD')">Ver</button>
+                        <p style="margin:10px 0; color:var(--texto-medio); flex:1;">Preparación profunda.</p>
+                        <div class="flex" style="justify-content:space-between; align-items:center;"><span
+                                style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$49 USD</span><button
+                                class="btn btn-primary" onclick="openPaymentModal('Manicuría', '49 USD')">Ver</button>
                         </div>
                     </div>
                 </div>
-                <!-- 6 -->
-                <div class="flex-card reveal delay-2">
-                    <img src="https://images.pexels.com/photos/3997360/pexels-photo-3997360.jpeg" class="card-img"
+                <div class="flex-card reveal delay-2"><img
+                        src="https://images.pexels.com/photos/3997360/pexels-photo-3997360.jpeg" class="card-img"
                         alt="C6">
                     <div class="card-content">
                         <h3>3D Art Artist</h3>
-                        <p style="margin:10px 0; color:var(--texto-medio); flex:1;">Relieve y escultura técnica.</p>
-                        <div class="flex" style="justify-content:space-between; align-items:center;">
-                            <span style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$55 USD</span>
-                            <button class="btn btn-primary" onclick="openPaymentModal('3D Art', '55 USD')">Ver</button>
+                        <p style="margin:10px 0; color:var(--texto-medio); flex:1;">Relieve y escultura.</p>
+                        <div class="flex" style="justify-content:space-between; align-items:center;"><span
+                                style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$55 USD</span><button
+                                class="btn btn-primary" onclick="openPaymentModal('3D Art', '55 USD')">Ver</button>
                         </div>
                     </div>
                 </div>
-                <!-- 7 -->
-                <div class="flex-card reveal">
-                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=800" class="card-img"
+                <div class="flex-card reveal"><img
+                        src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=800" class="card-img"
                         alt="C7">
                     <div class="card-content">
                         <h3>Soft Gel Academy</h3>
                         <p style="margin:10px 0; color:var(--texto-medio); flex:1;">Velocidad y rentabilidad.</p>
-                        <div class="flex" style="justify-content:space-between; align-items:center;">
-                            <span style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$32 USD</span>
-                            <button class="btn btn-primary"
-                                onclick="openPaymentModal('Soft Gel', '32 USD')">Ver</button>
+                        <div class="flex" style="justify-content:space-between; align-items:center;"><span
+                                style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$32 USD</span><button
+                                class="btn btn-primary" onclick="openPaymentModal('Soft Gel', '32 USD')">Ver</button>
                         </div>
                     </div>
                 </div>
-                <!-- 8 -->
-                <div class="flex-card reveal delay-1">
-                    <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=800" class="card-img"
+                <div class="flex-card reveal delay-1"><img
+                        src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=800" class="card-img"
                         alt="C8">
                     <div class="card-content">
                         <h3>Acrílico Pro</h3>
-                        <p style="margin:10px 0; color:var(--texto-medio); flex:1;">Perfeccionamiento técnica acrílica.
-                        </p>
-                        <div class="flex" style="justify-content:space-between; align-items:center;">
-                            <span style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$59 USD</span>
-                            <button class="btn btn-primary"
-                                onclick="openPaymentModal('Acrílico', '59 USD')">Ver</button>
+                        <p style="margin:10px 0; color:var(--texto-medio); flex:1;">Perfeccionamiento integral.</p>
+                        <div class="flex" style="justify-content:space-between; align-items:center;"><span
+                                style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$59 USD</span><button
+                                class="btn btn-primary" onclick="openPaymentModal('Acrílico', '59 USD')">Ver</button>
                         </div>
                     </div>
                 </div>
-                <!-- 9 -->
-                <div class="flex-card reveal delay-2">
-                    <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=800" class="card-img"
+                <div class="flex-card reveal delay-2"><img
+                        src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=800" class="card-img"
                         alt="C9">
                     <div class="card-content">
                         <h3>Química Técnica</h3>
-                        <p style="margin:10px 0; color:var(--texto-medio); flex:1;">Fundamentos teóricos esenciales.</p>
-                        <div class="flex" style="justify-content:space-between; align-items:center;">
-                            <span style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$25 USD</span>
-                            <button class="btn btn-primary" onclick="openPaymentModal('Química', '25 USD')">Ver</button>
+                        <p style="margin:10px 0; color:var(--texto-medio); flex:1;">Salud y seguridad profesional.</p>
+                        <div class="flex" style="justify-content:space-between; align-items:center;"><span
+                                style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$25 USD</span><button
+                                class="btn btn-primary" onclick="openPaymentModal('Química', '25 USD')">Ver</button>
                         </div>
                     </div>
                 </div>
@@ -203,48 +244,9 @@
         </div>
     </section>
 
-    <section id="mi-historia">
-        <div class="container flex-column" style="gap:100px;">
-            <div class="story-block reveal">
-                <div class="flex-1">
-                    <img src="img/B_JFL-4200.jpg" alt="Nadya"
-                        style="border-radius:20px; box-shadow:0 30px 60px rgba(0,0,0,0.1);">
-                </div>
-                <div class="flex-1">
-                    <h2 style="color:var(--esmeralda-deep); margin-bottom:20px;">Mi historia en cada trazo</h2>
-                    <p style="color:var(--texto-medio); line-height:1.8; margin-bottom:20px;">
-                        Soy Nadya Arrieta y desde marzo de 2014 he convertido mi pasión por las uñas en una carrera
-                        exitosa e inspiradora. Comencé arreglando las uñas de mis amigas con fe inquebrantable. Hoy
-                        formamos profesionales con un enfoque integral.
-                    </p>
-                    <p style="color:var(--texto-medio); line-height:1.8;">
-                        Creo firmemente que todxs podemos alcanzar nuestros sueños. Mi misión es llevar mi conocimiento
-                        a todo el mundo con mis cursos online. ¡Te invito a ser parte de esta comunidad!
-                    </p>
-                </div>
-            </div>
-
-            <div class="story-block reverse reveal delay-1">
-                <div class="flex-1">
-                    <div class="portrait-img">
-                        <img src="img/B_JFL-4248.jpg" alt="Retrato Nadya">
-                    </div>
-                </div>
-                <div class="flex-1">
-                    <h2 style="color:var(--esmeralda-deep); margin-bottom:20px;">Aprender con propósito</h2>
-                    <p style="color:var(--texto-medio); line-height:1.8;">
-                        En mi escuela no solo aprendés técnica. Aprendés a ver tu trabajo como una marca personal de
-                        lujo.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container" style="text-align:center;">
-            <p style="opacity:0.4;">© 2026 Academia de Arte en Uñas</p>
-        </div>
+    <footer style="background:var(--esmeralda-dark); color:#fff; padding:60px 0; text-align:center;">
+        <h3>Nadya Arrieta</h3>
+        <p style="opacity:0.4; margin-top:15px;">© 2026 Academia de Arte en Uñas</p>
     </footer>
 
     <div class="modal-overlay" id="paymentModal">
