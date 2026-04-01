@@ -6,9 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nadya Arrieta | Academia Profesional de Uñas</title>
   <link rel="stylesheet" href="styles.css">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;600&display=swap"
-    rel="stylesheet">
 </head>
 
 <body>
@@ -32,7 +29,7 @@
     style="background: linear-gradient(160deg, var(--esmeralda-deep) 0%, #0a2d22 50%, #061a14 100%);">
     <div class="container flex flex-mobile-column flex-center">
       <div class="hero-text reveal">
-        <span
+        <span class="hero-tag"
           style="border: 1px solid var(--turquesa-light); color: var(--turquesa-light); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 6px 16px; margin-bottom: 28px; display: inline-block;">✦
           Master en Uñas</span>
         <h1 class="reveal delay-1">Llevá tu Arte al <span class="text-gold-gradient">Siguiente Nivel</span></h1>
@@ -63,10 +60,7 @@
   <section id="cursos" class="section-alt">
     <div class="container">
       <div style="text-align:center; margin-bottom:60px;" class="reveal">
-        <span
-          style="color:var(--turquesa); letter-spacing:0.2em; text-transform:uppercase; font-size:0.75rem; display:block; margin-bottom:10px;">✦
-          Tu Proyección</span>
-        <h2 style="color:var(--esmeralda-deep);">Cursos Disponibles</h2>
+        <h2 style="color:var(--esmeralda-deep);">Propuesta Educativa</h2>
       </div>
 
       <!-- Pack 4 -->
@@ -75,49 +69,138 @@
         <div class="flex flex-mobile-column" style="align-items:center;">
           <div class="flex-1">
             <span class="btn-gold"
-              style="padding:4px 12px; font-size:0.7rem; margin-bottom:15px; display:inline-block;">★ PACK 9 EN 1</span>
-            <h3 class="text-gold-gradient">Academia Completa</h3>
-            <p style="opacity:0.7; margin-top:15px;">Todos los cursos en una sola suscripción. De principiante a experta
-              con un solo pago.</p>
+              style="padding:4px 12px; font-size:0.7rem; margin-bottom:15px; display:inline-block;">★ PACK
+              ACADEMIA</span>
+            <h3 class="text-gold-gradient">Formación Integral</h3>
+            <p style="opacity:0.7; margin-top:15px;">Todos los secretos de Nadya Arrieta en un solo lugar.</p>
           </div>
           <div style="text-align:right;" class="flex-mobile-center">
             <div style="text-decoration:line-through; opacity:0.4;">$299 USD</div>
             <div style="font-size:3rem; font-weight:700; color:var(--oro);">$149 USD</div>
             <button class="btn btn-gold" style="margin-top:20px;"
-              onclick="openPaymentModal('Academia Completa', '149 USD')">Adquirir Academia</button>
+              onclick="openPaymentModal('Academia Completa', '149 USD')">Adquirir Todo</button>
           </div>
         </div>
       </div>
 
       <div class="cards-flex-grid">
+        <!-- 9 Courses with working images -->
         <div class="flex-card reveal">
-          <h3>Curso: Gel UV</h3>
-          <p style="margin:15px 0; color:var(--texto-medio);">Lecciones profesionales para dominar el sistema de gel de
-            lujo.</p>
-          <div class="flex" style="justify-content:space-between; align-items:center; margin-top:20px;">
-            <span style="font-size:1.4rem; font-weight:700; color:var(--esmeralda);">$35 USD</span>
-            <button class="btn btn-primary" style="padding:10px 20px;"
-              onclick="openPaymentModal('Gel UV', '35 USD')">Comprar</button>
+          <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=800" class="card-img"
+            alt="Curso">
+          <div class="card-content">
+            <h3>Curso de Uñas Esculpidas</h3>
+            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Iniciá tu carrera con la técnica base.</p>
+            <div class="flex" style="justify-content:space-between; align-items:center;">
+              <span style="font-weight:700; color:var(--esmeralda);">$39 USD</span>
+              <button class="btn btn-primary"
+                onclick="openPaymentModal('Uñas Esculpidas', '39 USD')">Inscribirme</button>
+            </div>
           </div>
         </div>
+
         <div class="flex-card reveal delay-1">
-          <h3>Nail Art Floral</h3>
-          <p style="margin:15px 0; color:var(--texto-medio);">Diseño a mano alzada y trazos finos para un acabado
-            premium.</p>
-          <div class="flex" style="justify-content:space-between; align-items:center; margin-top:20px;">
-            <span style="font-size:1.4rem; font-weight:700; color:var(--esmeralda);">$39 USD</span>
-            <button class="btn btn-primary" style="padding:10px 20px;"
-              onclick="openPaymentModal('Nail Art Floral', '39 USD')">Comprar</button>
+          <img src="https://images.unsplash.com/photo-1607922546473-b3f0cc6114eb?q=80&w=800" class="card-img"
+            alt="Curso">
+          <div class="card-content">
+            <h3>Especialización Gel UV</h3>
+            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Nivel avanzado en sistemas de gel.</p>
+            <div class="flex" style="justify-content:space-between; align-items:center;">
+              <span style="font-weight:700; color:var(--esmeralda);">$45 USD</span>
+              <button class="btn btn-primary" onclick="openPaymentModal('Gel UV', '45 USD')">Inscribirme</button>
+            </div>
           </div>
         </div>
+
         <div class="flex-card reveal delay-2">
-          <h3>3D Art Mastery</h3>
-          <p style="margin:15px 0; color:var(--texto-medio);">Técnicas 3D avanzadas para manicuría artística de
-            vanguardia.</p>
-          <div class="flex" style="justify-content:space-between; align-items:center; margin-top:20px;">
-            <span style="font-size:1.4rem; font-weight:700; color:var(--esmeralda);">$49 USD</span>
-            <button class="btn btn-primary" style="padding:10px 20px;"
-              onclick="openPaymentModal('3D Art', '49 USD')">Comprar</button>
+          <img src="https://images.unsplash.com/photo-1610992015732-2449b0c26670?q=80&w=800" class="card-img"
+            alt="Curso">
+          <div class="card-content">
+            <h3>Semipermanente Pro</h3>
+            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">La técnica más rentable del salón.</p>
+            <div class="flex" style="justify-content:space-between; align-items:center;">
+              <span style="font-weight:700; color:var(--esmeralda);">$29 USD</span>
+              <button class="btn btn-primary"
+                onclick="openPaymentModal('Semipermanente', '29 USD')">Inscribirme</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-card reveal">
+          <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=800" class="card-img"
+            alt="Curso">
+          <div class="card-content">
+            <h3>Nail Art Floral</h3>
+            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Decoración premium a mano alzada.</p>
+            <div class="flex" style="justify-content:space-between; align-items:center;">
+              <span style="font-weight:700; color:var(--esmeralda);">$35 USD</span>
+              <button class="btn btn-primary" onclick="openPaymentModal('Nail Art', '35 USD')">Inscribirme</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-card reveal delay-1">
+          <img src="https://images.unsplash.com/photo-1522335789182-4bfda675270f?q=80&w=800" class="card-img"
+            alt="Curso">
+          <div class="card-content">
+            <h3>Manicuría Rusa Expert</h3>
+            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Perfección en el área de cutícula.</p>
+            <div class="flex" style="justify-content:space-between; align-items:center;">
+              <span style="font-weight:700; color:var(--esmeralda);">$49 USD</span>
+              <button class="btn btn-primary"
+                onclick="openPaymentModal('Manicuría Rusa', '49 USD')">Inscribirme</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-card reveal delay-2">
+          <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=800" class="card-img"
+            alt="Curso">
+          <div class="card-content">
+            <h3>Escultura 3D Art</h3>
+            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Diseños tridimensionales artísticos.</p>
+            <div class="flex" style="justify-content:space-between; align-items:center;">
+              <span style="font-weight:700; color:var(--esmeralda);">$55 USD</span>
+              <button class="btn btn-primary" onclick="openPaymentModal('3D Art', '55 USD')">Inscribirme</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-card reveal">
+          <img src="https://images.unsplash.com/photo-1599387737837-775b8e999081?q=80&w=800" class="card-img"
+            alt="Curso">
+          <div class="card-content">
+            <h3>Soft Gel Academy</h3>
+            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Velocidad garantizada en tus servicios.</p>
+            <div class="flex" style="justify-content:space-between; align-items:center;">
+              <span style="font-weight:700; color:var(--esmeralda);">$32 USD</span>
+              <button class="btn btn-primary" onclick="openPaymentModal('Soft Gel', '32 USD')">Inscribirme</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-card reveal delay-1">
+          <img src="https://images.unsplash.com/photo-1549439602-43ebca23d7af?q=80&w=800" class="card-img" alt="Curso">
+          <div class="card-content">
+            <h3>Acrílico Avanzado</h3>
+            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Control total de polímeros.</p>
+            <div class="flex" style="justify-content:space-between; align-items:center;">
+              <span style="font-weight:700; color:var(--esmeralda);">$59 USD</span>
+              <button class="btn btn-primary" onclick="openPaymentModal('Acrílico', '59 USD')">Inscribirme</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-card reveal delay-2">
+          <img src="https://images.unsplash.com/photo-1632345033839-23dc39d87178?q=80&w=800" class="card-img"
+            alt="Curso">
+          <div class="card-content">
+            <h3>Química para Nailers</h3>
+            <p style="flex:1; margin-bottom:15px; color:var(--texto-medio);">Seguridad y salud en el trabajo.</p>
+            <div class="flex" style="justify-content:space-between; align-items:center;">
+              <span style="font-weight:700; color:var(--esmeralda);">$25 USD</span>
+              <button class="btn btn-primary" onclick="openPaymentModal('Química', '25 USD')">Inscribirme</button>
+            </div>
           </div>
         </div>
       </div>
@@ -134,13 +217,20 @@
           </div>
         </div>
         <div class="flex-1">
+          <span class="hero-tag"
+            style="color:var(--turquesa); letter-spacing:0.2em; display:block; margin-bottom:15px;">✦ Mi Historia</span>
           <h2 style="color:var(--esmeralda-deep); margin-bottom:20px;">Mi Filosofía</h2>
-          <p style="color:var(--texto-medio); line-height:2; margin-bottom:30px;">
-            Busco que cada alumna encuentre su propia voz en este arte. La competencia se elimina cuando logramos la
-            excelencia técnica y una personalidad de marca definida.
+          <p style="color:var(--texto-medio); line-height:1.8; margin-bottom:20px;">
+            Soy Nadya Arrieta y desde marzo de 2014 he convertido mi pasión por las uñas en una carrera exitosa e
+            inspiradora. Comencé arreglando las uñas de mis amigas con fe inquebrantable. Hoy formamos profesionales con
+            un enfoque integral.
+          </p>
+          <p style="color:var(--texto-medio); line-height:1.8; margin-bottom:30px;">
+            Creo firmemente que todxs podemos alcanzar nuestros sueños. Mi misión es llevar mi conocimiento a todo el
+            mundo con mis cursos online. ¡Te invito a ser parte de esta comunidad!
           </p>
           <button class="btn btn-primary"
-            onclick="document.getElementById('cursos').scrollIntoView({behavior:'smooth'})">Ver mis cursos</button>
+            onclick="document.getElementById('cursos').scrollIntoView({behavior:'smooth'})">Explorar Carreras</button>
         </div>
       </div>
     </div>
