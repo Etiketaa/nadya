@@ -1,0 +1,44 @@
+{
+    "project_name": "Nadya Arrieta Escuela de Uñas",
+    "current_status": "Frontend v1 Completado",
+    "tech_stack": [
+        "HTML5 Semántico",
+        "CSS3 (Vanilla, Variables, Glassmorphism)",
+        "JavaScript (Vanilla, IntersectionObserver)"
+    ],
+    "design_system": {
+        "colors": {
+            "esmeralda": "#0d6b50",
+            "turquesa": "#1aaa85",
+            "oro": "#c9a84c",
+            "crema": "#f8f5ef",
+            "texto_claro": "#ffffff",
+            "texto_oscuro": "#0a1a14"
+        },
+        "typography": [
+            "Cormorant Garamond (Serif Elegant)",
+            "Jost / Outfit (Sans-Serif Modern Clean)"
+        ],
+        "ui_patterns": [
+            "Scroll animations (fade-in-up)",
+            "Dark y Light themes support",
+            "Botones Outline y Solid responsive",
+            "Modales centralizados"
+        ]
+    },
+    "file_structure": {
+        "index.html": "Menú selector de demos. Estructura de grilla de 4 opciones.",
+        "landing1.html": "Clásica y majestuosa. Layout 100% centrado, oscuro.",
+        "landing2.html": "Diseño Elegido: Moderno asimétrico (Split-Screen). Luminoso (Fondo Crema), estilo premium dinámico.",
+        "landing3.html": "Tribal Inmerso. Fondo animado con círculos de brillo, uso de pseudo-vidrio (Glassmorphism).",
+        "landing4.html": "Reestructuración del código HTML original proporcionado por el usuario usando styles.css",
+        "styles.css": "Hoja de estilos global unificada. Más de 800 líneas de lógica responsiva.",
+        "main.js": "Lógica central: Cierre de modales, links dinámicos de WhatsApp con texto codificado, animaciones de intersección.",
+        "img/": "Directorio conteniendo las fotos nadya-hero.jpg y nadya-perfil.jpg y otras imágenes de la producción."
+    },
+    "business_logic_current": "El usuario elige un curso, se abre un modal de advertencia indicando cuenta bancaria, y al hacer click se genera un enlace de WhatsApp con el nombre del curso y precio pre-llenados.",
+    "future_roadmap": {
+        "Phase_4": "Portal Privado Frontend (login.html, dashboard.html, clase.html).",
+        "Phase_5": "Automatización Backend (Recolección de datos, Pasarela de Pago real, Base de Datos MySQL/NoSQL, Webhooks para confirmación instantánea, y envío de email con credenciales autogeneradas)."
+    }
+}
