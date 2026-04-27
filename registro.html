@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta | Nadya Arrieta</title>
+    <meta name="description" content="Registrate en la academia Nadya Arrieta y accedé a cursos profesionales de uñas.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="registro.css">
+</head>
+
+<body>
+
+    <a href="landing3.html" class="login-back" id="reg-back">
+        ← Volver al sitio
+    </a>
+
+    <div class="registro-page">
+        <div class="registro-bg"></div>
+        <div class="registro-orb registro-orb-1"></div>
+        <div class="registro-orb registro-orb-2"></div>
+
+        <div class="registro-card">
+            <div class="login-logo">
+                <h1><span class="text-gold-gradient">Crear Cuenta</span></h1>
+                <p>Uníte a la academia de Nadya Arrieta</p>
+            </div>
+
+            <!-- Steps indicator -->
+            <div class="registro-steps">
+                <div class="step-dot active" data-step="1"></div>
+                <div class="step-dot" data-step="2"></div>
+                <div class="step-dot" data-step="3"></div>
+            </div>
+
+            <!-- Error / Success -->
+            <div class="login-error" id="regError">
+                <span>⚠</span>
+                <span id="regErrorMsg">Por favor completá todos los campos.</span>
+            </div>
+            <div class="login-success" id="regSuccess">
+                <span>✓</span>
+                <span>¡Cuenta creada! Revisá tu email para confirmar.</span>
+            </div>
+
+            <form id="registroForm" autocomplete="on">
+
+                <!-- STEP 1: Datos personales -->
+                <div class="step-panel active" id="step1">
+                    <div class="login-field">
+                        <label for="regNombre">Nombre completo</label>
+                        <input type="text" id="regNombre" name="nombre" placeholder="Ej: María García" required
+                            autocomplete="name">
+                    </div>
+
+                    <div class="login-field">
+                        <label for="regEmail">Email</label>
+                        <input type="email" id="regEmail" name="email" placeholder="tu@email.com" required
+                            autocomplete="email">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="login-field">
+                            <label for="regTelefono">WhatsApp / Teléfono</label>
+                            <input type="tel" id="regTelefono" name="telefono" placeholder="+54 9 11 1234-5678"
+                                required autocomplete="tel">
+                        </div>
+                        <div class="login-field">
+                            <label for="regPais">País</label>
+                            <select id="regPais" name="pais" required>
+                                <option value="" disabled selected>Seleccionar</option>
+                                <option value="AR">Argentina</option>
+                                <option value="MX">México</option>
+                                <option value="CO">Colombia</option>
+                                <option value="CL">Chile</option>
+                                <option value="PE">Perú</option>
+                                <option value="UY">Uruguay</option>
+                                <option value="PY">Paraguay</option>
+                                <option value="BO">Bolivia</option>
+                                <option value="EC">Ecuador</option>
+                                <option value="VE">Venezuela</option>
+                                <option value="BR">Brasil</option>
+                                <option value="ES">España</option>
+                                <option value="US">Estados Unidos</option>
+                                <option value="OTRO">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="step-nav">
+                        <button type="button" class="btn-step-next" onclick="goStep(2)">Continuar →</button>
+                    </div>
+                </div>
+
+                <!-- STEP 2: Perfil profesional -->
+                <div class="step-panel" id="step2">
+                    <div class="login-field">
+                        <label for="regNivel">Nivel de experiencia</label>
+                        <select id="regNivel" name="nivel" required>
+                            <option value="" disabled selected>¿Cuánta experiencia tenés?</option>
+                            <option value="principiante">Principiante — Recién comienzo</option>
+                            <option value="intermedio">Intermedio — Algo de práctica</option>
+                            <option value="avanzado">Avanzado — Profesional activa</option>
+                        </select>
+                    </div>
+
+                    <div class="login-field">
+                        <label for="regInstagram">Instagram (opcional)</label>
+                        <input type="text" id="regInstagram" name="instagram" placeholder="@tucuenta"
+                            autocomplete="off">
+                    </div>
+
+                    <div class="login-field">
+                        <label for="regCiudad">Ciudad</label>
+                        <input type="text" id="regCiudad" name="ciudad" placeholder="Ej: Buenos Aires" required>
+                    </div>
+
+                    <div class="step-nav">
+                        <button type="button" class="btn-step-back" onclick="goStep(1)">← Atrás</button>
+                        <button type="button" class="btn-step-next" onclick="goStep(3)">Continuar →</button>
+                    </div>
+                </div>
+
+                <!-- STEP 3: Contraseña y confirmar -->
+                <div class="step-panel" id="step3">
+                    <div class="login-field">
+                        <label for="regPassword">Contraseña</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="regPassword" name="password" placeholder="Mínimo 6 caracteres"
+                                required minlength="6" autocomplete="new-password">
+                            <button type="button" class="password-toggle" onclick="togglePass('regPassword', this)"
+                                aria-label="Mostrar contraseña">👁</button>
+                        </div>
+                    </div>
+
+                    <div class="login-field">
+                        <label for="regPasswordConfirm">Confirmar contraseña</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="regPasswordConfirm" name="password_confirm"
+                                placeholder="Repetí tu contraseña" required minlength="6"
+                                autocomplete="new-password">
+                            <button type="button" class="password-toggle"
+                                onclick="togglePass('regPasswordConfirm', this)"
+                                aria-label="Mostrar contraseña">👁</button>
+                        </div>
+                    </div>
+
+                    <div class="terms-check">
+                        <input type="checkbox" id="regTerms" required>
+                        <span>Acepto los <a href="legales.html" target="_blank">Términos y Condiciones</a> y la
+                            Política de Privacidad de Nadya Arrieta.</span>
+                    </div>
+
+                    <div class="step-nav">
+                        <button type="button" class="btn-step-back" onclick="goStep(2)">← Atrás</button>
+                        <button type="submit" class="btn-step-next" id="regSubmit">Crear Mi Cuenta ✨</button>
+                    </div>
+                </div>
+
+            </form>
+
+            <div class="login-divider">o</div>
+
+            <p class="login-register">
+                ¿Ya tenés cuenta? <a href="login.html">Iniciá sesión</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Step navigation
+        let currentStep = 1;
+
+        function goStep(step) {
+            const errorDiv = document.getElementById('regError');
+            errorDiv.classList.remove('show');
+
+            // Validate current step before advancing
+            if (step > currentStep) {
+                const currentPanel = document.getElementById('step' + currentStep);
+                const requiredFields = currentPanel.querySelectorAll('[required]');
+                let valid = true;
+
+                requiredFields.forEach(field => {
+                    if (!field.value || (field.type === 'checkbox' && !field.checked)) {
+                        valid = false;
+                        field.style.borderColor = 'rgba(220, 53, 69, 0.6)';
+                        setTimeout(() => field.style.borderColor = '', 2000);
+                    }
+                });
+
+                if (!valid) {
+                    document.getElementById('regErrorMsg').textContent = 'Por favor completá todos los campos obligatorios.';
+                    errorDiv.classList.add('show');
+                    return;
+                }
+            }
+
+            // Hide all panels, show target
+            document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+            document.getElementById('step' + step).classList.add('active');
+
+            // Update step dots
+            document.querySelectorAll('.step-dot').forEach(dot => {
+                const dotStep = parseInt(dot.dataset.step);
+                dot.classList.remove('active', 'completed');
+                if (dotStep === step) dot.classList.add('active');
+                else if (dotStep < step) dot.classList.add('completed');
+            });
+
+            currentStep = step;
+        }
+
+        // Password toggle
+        function togglePass(inputId, btn) {
+            const input = document.getElementById(inputId);
+            const isPassword = input.type === 'password';
+            input.type = isPassword ? 'text' : 'password';
+            btn.textContent = isPassword ? '🙈' : '👁';
+        }
+
+        // Form submit
+        const form = document.getElementById('registroForm');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const errorDiv = document.getElementById('regError');
+            const successDiv = document.getElementById('regSuccess');
+            const submitBtn = document.getElementById('regSubmit');
+
+            errorDiv.classList.remove('show');
+            successDiv.classList.remove('show');
+
+            // Validate passwords match
+            const pass = document.getElementById('regPassword').value;
+            const passConfirm = document.getElementById('regPasswordConfirm').value;
+
+            if (pass !== passConfirm) {
+                document.getElementById('regErrorMsg').textContent = 'Las contraseñas no coinciden.';
+                errorDiv.classList.add('show');
+                return;
+            }
+
+            if (!document.getElementById('regTerms').checked) {
+                document.getElementById('regErrorMsg').textContent = 'Debés aceptar los Términos y Condiciones.';
+                errorDiv.classList.add('show');
+                return;
+            }
+
+            submitBtn.classList.add('loading');
+            submitBtn.textContent = 'Creando cuenta...';
+
+            // Simulate API call
+            await new Promise(resolve => setTimeout(resolve, 2000));
+
+            // Collect all form data
+            const formData = {
+                nombre: document.getElementById('regNombre').value,
+                email: document.getElementById('regEmail').value,
+                telefono: document.getElementById('regTelefono').value,
+                pais: document.getElementById('regPais').value,
+                nivel: document.getElementById('regNivel').value,
+                instagram: document.getElementById('regInstagram').value,
+                ciudad: document.getElementById('regCiudad').value,
+                created_at: new Date().toISOString()
+            };
+
+            console.log('📋 Student Registration Data:', formData);
+
+            successDiv.classList.add('show');
+            submitBtn.textContent = '¡Cuenta creada!';
+            submitBtn.classList.remove('loading');
+
+            // Redirect after delay
+            setTimeout(() => {
+                alert('Redirigir a confirmación de email (implementar con Firebase Auth)');
+            }, 1500);
+        });
+
+        // Focus animations
+        document.querySelectorAll('.login-field input, .login-field select').forEach(input => {
+            input.addEventListener('focus', () => {
+                const field = input.closest('.login-field');
+                if (field) field.style.transform = 'translateX(3px)';
+            });
+            input.addEventListener('blur', () => {
+                const field = input.closest('.login-field');
+                if (field) field.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadya Arrieta | Elegance Pro</title>
+    <meta name="description" content="Formación profesional en uñas con Nadya Arrieta. Experiencia elegante y premium.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="master_rose.css">
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <div class="logo">
+            Nadya Arrieta
+        </div>
+        <div class="nav-links">
+            <a href="#bundle">El Pack</a>
+            <a href="#mi-historia">Mi Historia</a>
+            <a href="#cursos">Cursos</a>
+        </div>
+    </nav>
+
+    <header class="hero-rose flex-center" id="bundle">
+        <div class="container" style="text-align:center; position:relative; z-index:1;">
+            <div class="rose-glow" style="top:-150px; right:-100px;"></div>
+            <h1 class="reveal"><span class="text-rose-gradient">Elegance</span> <br> Professional</h1>
+            <p class="reveal delay-1" style="max-width:700px; margin:20px auto 40px; opacity:0.9;">
+                Donde la delicadeza se encuentra con la técnica profesional.
+            </p>
+
+            <div class="bundle-rose reveal delay-2" style="position:relative; z-index:1;">
+                <div class="flex flex-mobile-column" style="align-items:center;">
+                    <div class="flex-1" style="text-align:left;">
+                        <span class="badge-rose">✦ ACADEMIA COMPLETA</span>
+                        <h3>Pack Elegance 9 en 1</h3>
+                        <p style="opacity:0.8; margin-top:10px;">Acceso inmediato a toda la formación premium.</p>
+                    </div>
+                    <div class="flex-mobile-center" style="text-align:right;">
+                        <span style="text-decoration:line-through; opacity:0.5; margin-right:15px;">$299 USD</span>
+                        <span style="font-size:3rem; font-weight:700; color:var(--rose-light);">$149 USD</span>
+                        <div style="margin-top:20px;">
+                            <button class="btn btn-rose"
+                                onclick="openPaymentModal('Academia Completa', '149 USD')">Inscribirme Ahora</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MI HISTORIA -->
+    <section id="mi-historia" class="section-rose-alt">
+        <div class="container">
+            <div class="story-block reveal">
+                <div class="flex-1">
+                    <img src="img/B_JFL-4200.jpg" alt="Nadya"
+                        style="border-radius:24px; box-shadow:0 30px 60px rgba(140,94,88,0.15);">
+                </div>
+                <div class="flex-1">
+                    <h2 style="color:var(--rose-deep); margin-bottom:10px;">Bienvenidos a mi Escuela de Uñas Online</h2>
+                    <div class="rose-divider" style="margin:15px 0;"></div>
+                    <p style="color:var(--rose-deep); line-height:1.9; margin-bottom:20px; opacity:0.85;">
+                        Soy Nadya Arrieta y desde marzo de 2014 he convertido mi pasión por las uñas en una carrera
+                        exitosa e inspiradora. Comencé arreglando las uñas de mis amigas, con mucho temor pero con una
+                        fe inquebrantable en que podía lograr la independencia y seguir mi pasión.
+                    </p>
+                    <p style="color:var(--rose-deep); line-height:1.9; opacity:0.85;">
+                        Hoy formamos profesionales con un enfoque integral en el desarrollo personal, las energías y
+                        obviamente la formación Profesional necesaria y adecuada. Mi misión es llevar mi conocimiento a
+                        todo el mundo con mis cursos online.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTE SECTION -->
+    <section class="section-rose-dark">
+        <div class="container" style="max-width:900px;">
+            <div class="reveal">
+                <div class="quote-rose">
+                    <p style="font-size:1.3rem; font-style:italic; line-height:1.9; margin-bottom:20px;">
+                        "Cuando comencé este camino, no sabía hasta dónde podía llegar. Solo tenía un sueño, unas manos
+                        dispuestas a crear y una enorme fe en que Dios me estaba guiando. Lo que empezó como un
+                        pasatiempo con amigas, se transformó en mi propósito: ayudar a otras personas a descubrir su
+                        talento y a brillar con lo que aman hacer."
+                    </p>
+                </div>
+                <p style="opacity:0.8; line-height:1.8;">
+                    En mi escuela no solo enseño técnicas, también comparto energía, confianza y la certeza de que cada
+                    una de nosotras tiene la capacidad de transformar su vida. Ser profesional de las uñas es
+                    independencia, creatividad y libertad.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CURSOS -->
+    <section id="cursos" class="section-rose-alt">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:60px;" class="reveal">
+                <h2 style="color:var(--rose-deep);">Catálogo de Capacitaciones</h2>
+                <div class="rose-divider"></div>
+                <p style="margin-top:15px; color:var(--rose-deep); opacity:0.7;">El futuro está en tus manos, y yo voy a estar para acompañarte.</p>
+            </div>
+
+            <div class="cards-flex-grid">
+                <div class="flex-card rose-card reveal"><img src="img/B_JFL-4190.jpg" class="card-img" alt="Uñas Esculpidas">
+                    <div class="card-content">
+                        <h3>Uñas Esculpidas</h3>
+                        <p style="margin:10px 0; color:var(--rose-deep); opacity:0.7; flex:1;">Técnica profesional y avanzada.</p>
+                        <div class="flex" style="justify-content:space-between; align-items:center;">
+                            <span class="rose-price">$39 USD</span>
+                            <button class="btn btn-rose" onclick="openPaymentModal('Uñas Esculpidas', '39 USD')">Ver</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-card rose-card reveal delay-1"><img src="img/B_JFL-4223.jpg" class="card-img" alt="Gel UV">
+                    <div class="card-content">
+                        <h3>Capacitación Gel UV</h3>
+                        <p style="margin:10px 0; color:var(--rose-deep); opacity:0.7; flex:1;">Construcción y esmaltado.</p>
+                        <div class="flex" style="justify-content:space-between; align-items:center;">
+                            <span class="rose-price">$45 USD</span>
+                            <button class="btn btn-rose" onclick="openPaymentModal('Gel UV', '45 USD')">Ver</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-card rose-card reveal delay-2"><img src="img/B_JFL-4248.jpg" class="card-img" alt="Semipermanente">
+                    <div class="card-content">
+                        <h3>Semipermanente Pro</h3>
+                        <p style="margin:10px 0; color:var(--rose-deep); opacity:0.7; flex:1;">Servicio estrella.</p>
+                        <div class="flex" style="justify-content:space-between; align-items:center;">
+                            <span class="rose-price">$29 USD</span>
+                            <button class="btn btn-rose" onclick="openPaymentModal('Semipermanente', '29 USD')">Ver</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-card rose-card reveal"><img src="img/DSC08974.JPG" class="card-img" alt="Nail Art">
+                    <div class="card-content">
+                        <h3>Nail Art Floral</h3>
+                        <p style="margin:10px 0; color:var(--rose-deep); opacity:0.7; flex:1;">Diseños únicos.</p>
+                        <div class="flex" style="justify-content:space-between; align-items:center;">
+                            <span class="rose-price">$35 USD</span>
+                            <button class="btn btn-rose" onclick="openPaymentModal('Nail Art', '35 USD')">Ver</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-card rose-card reveal delay-1"><img src="img/DSC09117.JPG" class="card-img" alt="Manicuría">
+                    <div class="card-content">
+                        <h3>Manicuría Rusa</h3>
+                        <p style="margin:10px 0; color:var(--rose-deep); opacity:0.7; flex:1;">Preparación profunda.</p>
+                        <div class="flex" style="justify-content:space-between; align-items:center;">
+                            <span class="rose-price">$49 USD</span>
+                            <button class="btn btn-rose" onclick="openPaymentModal('Manicuría', '49 USD')">Ver</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-card rose-card reveal delay-2"><img src="img/B_JFL-4628.jpg" class="card-img" alt="3D Art">
+                    <div class="card-content">
+                        <h3>3D Art Artist</h3>
+                        <p style="margin:10px 0; color:var(--rose-deep); opacity:0.7; flex:1;">Relieve y escultura.</p>
+                        <div class="flex" style="justify-content:space-between; align-items:center;">
+                            <span class="rose-price">$55 USD</span>
+                            <button class="btn btn-rose" onclick="openPaymentModal('3D Art', '55 USD')">Ver</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-card rose-card reveal"><img src="img/B_JFL-4658.jpg" class="card-img" alt="Soft Gel">
+                    <div class="card-content">
+                        <h3>Soft Gel Academy</h3>
+                        <p style="margin:10px 0; color:var(--rose-deep); opacity:0.7; flex:1;">Velocidad técnica.</p>
+                        <div class="flex" style="justify-content:space-between; align-items:center;">
+                            <span class="rose-price">$32 USD</span>
+                            <button class="btn btn-rose" onclick="openPaymentModal('Soft Gel', '32 USD')">Ver</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-card rose-card reveal delay-1"><img src="img/B_JFL-4706.jpg" class="card-img" alt="Acrílico">
+                    <div class="card-content">
+                        <h3>Acrílico Pro</h3>
+                        <p style="margin:10px 0; color:var(--rose-deep); opacity:0.7; flex:1;">Perfeccionamiento integral.</p>
+                        <div class="flex" style="justify-content:space-between; align-items:center;">
+                            <span class="rose-price">$59 USD</span>
+                            <button class="btn btn-rose" onclick="openPaymentModal('Acrílico', '59 USD')">Ver</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-card rose-card reveal delay-2"><img src="img/B_JFL-4311.jpg" class="card-img" alt="Química">
+                    <div class="card-content">
+                        <h3>Química Técnica</h3>
+                        <p style="margin:10px 0; color:var(--rose-deep); opacity:0.7; flex:1;">Salud y seguridad.</p>
+                        <div class="flex" style="justify-content:space-between; align-items:center;">
+                            <span class="rose-price">$25 USD</span>
+                            <button class="btn btn-rose" onclick="openPaymentModal('Química', '25 USD')">Ver</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-rose" style="padding:60px 20px; text-align:center;">
+        <h3>Nadya Arrieta</h3>
+        <p style="margin-top:15px; font-size:0.9rem; opacity:0.8;">
+            Sitio diseñado por <a href="https://francoparedes.vercel.app" target="_blank" class="credit">Franco Paredes</a> | <a href="legales.html" style="color:var(--blanco); text-decoration:none; opacity:0.6;">Términos y Legales</a>
+        </p>
+        <p style="opacity:0.4; margin-top:15px;">© 2026 Academia de Arte en Uñas</p>
+    </footer>
+
+    <div class="modal-overlay" id="paymentModal">
+        <div class="modal-content" style="background:var(--champagne);">
+            <h3 id="modalTitle">Inscripción</h3>
+            <div style="margin:20px 0; padding:20px; background:#fff; border-radius:10px;">
+                <p>Transferencia Bancaria (Argentina)</p>
+                <p><strong>Alias:</strong> NADYA.UÑAS.ARG</p>
+            </div>
+            <button class="btn btn-rose" style="width:100%;" onclick="closePaymentModal()">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="design-switcher.js"></script>
+    <script>
+        function openPaymentModal(title, price) {
+            document.getElementById('modalTitle').innerText = 'Inscripción: ' + title;
+            document.getElementById('paymentModal').classList.add('active');
+        }
+        function closePaymentModal() {
+            document.getElementById('paymentModal').classList.remove('active');
+        }
+    </script>
+</body>
+
+</html>

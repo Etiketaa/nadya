@@ -1,0 +1,151 @@
+/** 
+ * Nadya Arrieta - Rose Gold & Champagne Theme
+ * Elegant variation of the Master design
+ **/
+
+/* ═══ ROSE GOLD & CHAMPAGNE PALETTE ═══ */
+:root {
+    --rose-deep: #8c5e58;
+    --rose-mid: #d4a373;
+    --rose-light: #e8c4a0;
+    --champagne: #fefae0;
+    --blush: #faedcd;
+    --rose-dark: #3d2520;
+    --rose-accent: #c97f5f;
+    --rose-gold-shine: linear-gradient(135deg, #e8c4a0, #d4a373, #c97f5f);
+}
+
+body {
+    background: var(--champagne);
+}
+
+.hero-rose {
+    background: linear-gradient(135deg, rgba(60, 37, 32, 0.85), rgba(140, 94, 88, 0.8)), url('img/nadya-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    color: #fff;
+}
+
+.bundle-rose {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(232, 196, 160, 0.25);
+    border-radius: 24px;
+    padding: 45px;
+    margin-top: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bundle-rose::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(212, 163, 115, 0.08) 0%, transparent 60%);
+    animation: shimmer-rose 8s ease-in-out infinite;
+}
+
+@keyframes shimmer-rose {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(30px, -20px); }
+}
+
+.text-rose-gradient {
+    background: var(--rose-gold-shine);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-rose {
+    background: var(--rose-mid);
+    color: #fff;
+    border: none;
+}
+
+.btn-rose:hover {
+    background: var(--rose-accent);
+}
+
+.badge-rose {
+    background: var(--rose-gold-shine);
+    color: var(--rose-dark);
+    padding: 5px 14px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.quote-rose {
+    border-left: 4px solid var(--rose-mid);
+    padding-left: 30px;
+    margin: 40px 0;
+}
+
+.section-rose-dark {
+    background: var(--rose-dark);
+    color: #fff;
+}
+
+.section-rose-alt {
+    background: var(--blush);
+}
+
+/* Card overrides */
+.rose-card {
+    background: #fff;
+    border: 1px solid rgba(212, 163, 115, 0.15);
+}
+
+.rose-card:hover {
+    border-color: var(--rose-mid);
+    box-shadow: 0 20px 50px rgba(140, 94, 88, 0.12);
+}
+
+.rose-price {
+    color: var(--rose-deep);
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+/* Decorative Elements */
+.rose-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--rose-gold-shine);
+    margin: 20px auto;
+    border-radius: 2px;
+}
+
+.rose-glow {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(212, 163, 115, 0.15), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Nav override for rose */
+nav.scrolled {
+    background: rgba(61, 37, 32, 0.92);
+}
+
+/* Footer override */
+.footer-rose {
+    background: var(--rose-dark);
+    color: #fff;
+}
+
+.footer-rose a.credit {
+    color: var(--rose-mid);
+    text-decoration: none;
+}

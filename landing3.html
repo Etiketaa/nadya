@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nadya Arrieta | Master en Uñas</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="course-modal.css">
     <style>
         .hero-l3 {
             background: linear-gradient(rgba(8, 77, 56, 0.8), rgba(8, 77, 56, 0.9)), url('img/nadya-hero.jpg');
@@ -42,6 +43,7 @@
             <a href="#bundle">El Pack</a>
             <a href="#mi-historia">Mi Historia</a>
             <a href="#cursos">Cursos</a>
+            <a href="login.html" style="background:rgba(201,168,76,0.2); padding:6px 16px; border-radius:6px; color:var(--oro);">Iniciar Sesión</a>
         </div>
     </nav>
 
@@ -129,112 +131,67 @@
             </div>
 
             <div class="cards-flex-grid">
-                <div class="flex-card reveal"><img
-                        src="https://images.pexels.com/photos/34871553/pexels-photo-34871553.jpeg" class="card-img"
-                        alt="C1">
+                <div class="flex-card reveal"><img src="img/B_JFL-4190.jpg" class="card-img" alt="Uñas Esculpidas">
                     <div class="card-content">
                         <h3>Uñas Esculpidas</h3>
                         <p style="margin:10px 0; color:var(--texto-medio); flex:1;">Técnica profesional y avanzada.</p>
-                        <div class="flex" style="justify-content:space-between; align-items:center;"><span
-                                style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$39 USD</span><button
-                                class="btn btn-primary"
-                                onclick="openPaymentModal('Uñas Esculpidas', '39 USD')">Ver</button></div>
+                        <div class="flex" style="justify-content:space-between; align-items:center;"><span style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$39 USD</span><button class="btn btn-primary" onclick="openCourseModal('unas-esculpidas')">Ver más</button></div>
                     </div>
                 </div>
-                <div class="flex-card reveal delay-1"><img
-                        src="https://images.pexels.com/photos/4783259/pexels-photo-4783259.jpeg" class="card-img"
-                        alt="C2">
+                <div class="flex-card reveal delay-1"><img src="img/B_JFL-4223.jpg" class="card-img" alt="Gel UV">
                     <div class="card-content">
                         <h3>Capacitación Gel UV</h3>
                         <p style="margin:10px 0; color:var(--texto-medio); flex:1;">Construcción y esmaltado.</p>
-                        <div class="flex" style="justify-content:space-between; align-items:center;"><span
-                                style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$45 USD</span><button
-                                class="btn btn-primary" onclick="openPaymentModal('Gel UV', '45 USD')">Ver</button>
-                        </div>
+                        <div class="flex" style="justify-content:space-between; align-items:center;"><span style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$45 USD</span><button class="btn btn-primary" onclick="openCourseModal('gel-uv')">Ver más</button></div>
                     </div>
                 </div>
-                <div class="flex-card reveal delay-2"><img
-                        src="https://images.pexels.com/photos/4677846/pexels-photo-4677846.jpeg" class="card-img"
-                        alt="C3">
+                <div class="flex-card reveal delay-2"><img src="img/B_JFL-4248.jpg" class="card-img" alt="Semipermanente">
                     <div class="card-content">
                         <h3>Semipermanente Pro</h3>
                         <p style="margin:10px 0; color:var(--texto-medio); flex:1;">Servicio estrella.</p>
-                        <div class="flex" style="justify-content:space-between; align-items:center;"><span
-                                style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$29 USD</span><button
-                                class="btn btn-primary"
-                                onclick="openPaymentModal('Semipermanente', '29 USD')">Ver</button></div>
+                        <div class="flex" style="justify-content:space-between; align-items:center;"><span style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$29 USD</span><button class="btn btn-primary" onclick="openCourseModal('semipermanente')">Ver más</button></div>
                     </div>
                 </div>
-                <div class="flex-card reveal"><img
-                        src="https://images.pexels.com/photos/17471377/pexels-photo-17471377.jpeg" class="card-img"
-                        alt="C4">
+                <div class="flex-card reveal"><img src="img/DSC08974.JPG" class="card-img" alt="Nail Art">
                     <div class="card-content">
                         <h3>Nail Art Floral</h3>
                         <p style="margin:10px 0; color:var(--texto-medio); flex:1;">Diseños únicos.</p>
-                        <div class="flex" style="justify-content:space-between; align-items:center;"><span
-                                style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$35 USD</span><button
-                                class="btn btn-primary" onclick="openPaymentModal('Nail Art', '35 USD')">Ver</button>
-                        </div>
+                        <div class="flex" style="justify-content:space-between; align-items:center;"><span style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$35 USD</span><button class="btn btn-primary" onclick="openCourseModal('nail-art')">Ver más</button></div>
                     </div>
                 </div>
-                <div class="flex-card reveal delay-1"><img
-                        src="https://images.pexels.com/photos/4677853/pexels-photo-4677853.jpeg" class="card-img"
-                        alt="C5">
+                <div class="flex-card reveal delay-1"><img src="img/DSC09117.JPG" class="card-img" alt="Manicuría">
                     <div class="card-content">
                         <h3>Manicuría Rusa</h3>
                         <p style="margin:10px 0; color:var(--texto-medio); flex:1;">Preparación profunda.</p>
-                        <div class="flex" style="justify-content:space-between; align-items:center;"><span
-                                style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$49 USD</span><button
-                                class="btn btn-primary" onclick="openPaymentModal('Manicuría', '49 USD')">Ver</button>
-                        </div>
+                        <div class="flex" style="justify-content:space-between; align-items:center;"><span style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$49 USD</span><button class="btn btn-primary" onclick="openCourseModal('manicuria')">Ver más</button></div>
                     </div>
                 </div>
-                <div class="flex-card reveal delay-2"><img
-                        src="https://images.pexels.com/photos/3997360/pexels-photo-3997360.jpeg" class="card-img"
-                        alt="C6">
+                <div class="flex-card reveal delay-2"><img src="img/B_JFL-4628.jpg" class="card-img" alt="3D Art">
                     <div class="card-content">
                         <h3>3D Art Artist</h3>
                         <p style="margin:10px 0; color:var(--texto-medio); flex:1;">Relieve y escultura.</p>
-                        <div class="flex" style="justify-content:space-between; align-items:center;"><span
-                                style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$55 USD</span><button
-                                class="btn btn-primary" onclick="openPaymentModal('3D Art', '55 USD')">Ver</button>
-                        </div>
+                        <div class="flex" style="justify-content:space-between; align-items:center;"><span style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$55 USD</span><button class="btn btn-primary" onclick="openCourseModal('3d-art')">Ver más</button></div>
                     </div>
                 </div>
-                <div class="flex-card reveal"><img
-                        src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=800" class="card-img"
-                        alt="C7">
+                <div class="flex-card reveal"><img src="img/B_JFL-4658.jpg" class="card-img" alt="Soft Gel">
                     <div class="card-content">
                         <h3>Soft Gel Academy</h3>
                         <p style="margin:10px 0; color:var(--texto-medio); flex:1;">Velocidad técnica.</p>
-                        <div class="flex" style="justify-content:space-between; align-items:center;"><span
-                                style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$32 USD</span><button
-                                class="btn btn-primary" onclick="openPaymentModal('Soft Gel', '32 USD')">Ver</button>
-                        </div>
+                        <div class="flex" style="justify-content:space-between; align-items:center;"><span style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$32 USD</span><button class="btn btn-primary" onclick="openCourseModal('soft-gel')">Ver más</button></div>
                     </div>
                 </div>
-                <div class="flex-card reveal delay-1"><img
-                        src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=800" class="card-img"
-                        alt="C8">
+                <div class="flex-card reveal delay-1"><img src="img/B_JFL-4706.jpg" class="card-img" alt="Acrílico">
                     <div class="card-content">
                         <h3>Acrílico Pro</h3>
                         <p style="margin:10px 0; color:var(--texto-medio); flex:1;">Perfeccionamiento integral.</p>
-                        <div class="flex" style="justify-content:space-between; align-items:center;"><span
-                                style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$59 USD</span><button
-                                class="btn btn-primary" onclick="openPaymentModal('Acrílico', '59 USD')">Ver</button>
-                        </div>
+                        <div class="flex" style="justify-content:space-between; align-items:center;"><span style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$59 USD</span><button class="btn btn-primary" onclick="openCourseModal('acrilico')">Ver más</button></div>
                     </div>
                 </div>
-                <div class="flex-card reveal delay-2"><img
-                        src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=800" class="card-img"
-                        alt="C9">
+                <div class="flex-card reveal delay-2"><img src="img/B_JFL-4311.jpg" class="card-img" alt="Química">
                     <div class="card-content">
                         <h3>Química Técnica</h3>
                         <p style="margin:10px 0; color:var(--texto-medio); flex:1;">Salud y seguridad.</p>
-                        <div class="flex" style="justify-content:space-between; align-items:center;"><span
-                                style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$25 USD</span><button
-                                class="btn btn-primary" onclick="openPaymentModal('Química', '25 USD')">Ver</button>
-                        </div>
+                        <div class="flex" style="justify-content:space-between; align-items:center;"><span style="font-weight:700; color:var(--esmeralda); font-size:1.4rem;">$25 USD</span><button class="btn btn-primary" onclick="openCourseModal('quimica')">Ver más</button></div>
                     </div>
                 </div>
             </div>
@@ -251,6 +208,46 @@
         <p style="opacity:0.4; margin-top:15px;">© 2026 Academia de Arte en Uñas</p>
     </footer>
 
+    <!-- Course Detail Modal -->
+    <div id="courseModal">
+        <div class="course-modal-card">
+            <div class="cm-header">
+                <button class="cm-close" onclick="closeCourseModal()">✕</button>
+                <img id="cmImg" src="" alt="">
+                <div class="cm-header-overlay">
+                    <h2 id="cmTitle"></h2>
+                </div>
+            </div>
+            <div class="cm-body">
+                <div class="cm-stats">
+                    <div class="cm-stat">
+                        <div class="cm-stat-icon">⏱</div>
+                        <div><span class="cm-stat-label" id="cmDuration"></span><span class="cm-stat-value">Duración</span></div>
+                    </div>
+                    <div class="cm-stat">
+                        <div class="cm-stat-icon">📖</div>
+                        <div><span class="cm-stat-label" id="cmLessons"></span><span class="cm-stat-value">Clases</span></div>
+                    </div>
+                    <div class="cm-stat">
+                        <div class="cm-stat-icon">📊</div>
+                        <div><span class="cm-stat-label" id="cmLevel"></span><span class="cm-stat-value">Nivel</span></div>
+                    </div>
+                </div>
+                <p class="cm-description" id="cmDescription"></p>
+                <h4 class="cm-topics-title">Lo que vas a aprender</h4>
+                <ul class="cm-topics" id="cmTopics"></ul>
+                <div class="cm-price-bar">
+                    <div>
+                        <span class="cm-price-label">Precio del curso</span>
+                        <span class="cm-price-amount" id="cmPrice"></span>
+                    </div>
+                    <button class="cm-buy-btn" onclick="proceedToPurchase()">Inscribirme →</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal (fallback for logged-in users) -->
     <div class="modal-overlay" id="paymentModal">
         <div class="modal-content">
             <h3 id="modalTitle">Inscripción</h3>
@@ -263,6 +260,8 @@
     </div>
 
     <script src="main.js"></script>
+    <script src="design-switcher.js"></script>
+    <script src="course-modal.js"></script>
     <script>
         function openPaymentModal(title, price) {
             document.getElementById('modalTitle').innerText = 'Inscripción: ' + title;

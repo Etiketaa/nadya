@@ -1,0 +1,219 @@
+/** 
+ * Nadya Arrieta - Deep Plum & Lavender Theme
+ * Creative, artistic variation of the Master design
+ **/
+
+/* ═══ DEEP PLUM & LAVENDER PALETTE ═══ */
+:root {
+    --plum-deep: #4a2c40;
+    --plum-mid: #6b3a5a;
+    --plum-light: #9d8189;
+    --lavender: #c9b1d0;
+    --pearl: #f4f1de;
+    --plum-dark: #2a1a24;
+    --mauve: #b07aa1;
+    --plum-shine: linear-gradient(135deg, #c9b1d0, #9d8189, #6b3a5a);
+    --plum-glow: linear-gradient(135deg, #b07aa1, #c9b1d0);
+}
+
+body {
+    background: var(--pearl);
+}
+
+.hero-plum {
+    background: linear-gradient(150deg, rgba(42, 26, 36, 0.92), rgba(74, 44, 64, 0.82)), url('img/nadya-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    color: #fff;
+    position: relative;
+}
+
+.hero-plum::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(to top, var(--pearl), transparent);
+    pointer-events: none;
+}
+
+.bundle-plum {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(201, 177, 208, 0.2);
+    border-radius: 28px;
+    padding: 45px;
+    margin-top: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bundle-plum::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: conic-gradient(from 0deg, transparent, rgba(176, 122, 161, 0.05), transparent, rgba(201, 177, 208, 0.05), transparent);
+    animation: plum-spin 20s linear infinite;
+}
+
+@keyframes plum-spin {
+    100% { transform: rotate(360deg); }
+}
+
+.text-plum-gradient {
+    background: var(--plum-glow);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-plum {
+    background: var(--mauve);
+    color: #fff;
+    border: none;
+}
+
+.btn-plum:hover {
+    background: var(--plum-mid);
+}
+
+.badge-plum {
+    background: var(--plum-shine);
+    color: #fff;
+    padding: 5px 14px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.quote-plum {
+    border-left: 4px solid var(--mauve);
+    padding-left: 30px;
+    margin: 40px 0;
+}
+
+.section-plum-dark {
+    background: var(--plum-dark);
+    color: #fff;
+}
+
+.section-plum-alt {
+    background: #ede8e2;
+}
+
+/* Card overrides */
+.plum-card {
+    background: #fff;
+    border: 1px solid rgba(157, 129, 137, 0.1);
+}
+
+.plum-card:hover {
+    border-color: var(--lavender);
+    box-shadow: 0 20px 50px rgba(74, 44, 64, 0.1);
+}
+
+.plum-price {
+    color: var(--plum-deep);
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.plum-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--plum-shine);
+    margin: 20px auto;
+    border-radius: 2px;
+}
+
+/* Artistic glow */
+.plum-orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(80px);
+    opacity: 0.15;
+}
+
+.plum-orb-1 {
+    width: 350px;
+    height: 350px;
+    background: var(--mauve);
+    top: -100px;
+    right: -100px;
+    animation: orb-pulse 8s ease-in-out infinite;
+}
+
+.plum-orb-2 {
+    width: 250px;
+    height: 250px;
+    background: var(--lavender);
+    bottom: -50px;
+    left: -80px;
+    animation: orb-pulse 8s ease-in-out infinite 4s;
+}
+
+@keyframes orb-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.15; }
+    50% { transform: scale(1.2); opacity: 0.25; }
+}
+
+/* Nav override */
+nav.scrolled {
+    background: rgba(42, 26, 36, 0.94);
+}
+
+.footer-plum {
+    background: var(--plum-dark);
+    color: #fff;
+}
+
+.footer-plum a.credit {
+    color: var(--lavender);
+    text-decoration: none;
+}
+
+/* Testimonial strip */
+.testimonial-strip {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding: 20px 0;
+    scrollbar-width: none;
+}
+
+.testimonial-strip::-webkit-scrollbar {
+    display: none;
+}
+
+.testimonial-card {
+    min-width: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(201, 177, 208, 0.15);
+    border-radius: 16px;
+    padding: 30px;
+    flex-shrink: 0;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+.testimonial-author {
+    margin-top: 15px;
+    font-weight: 600;
+    color: var(--lavender);
+    font-size: 0.85rem;
+}

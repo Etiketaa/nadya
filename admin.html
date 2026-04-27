@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administrativo | Nadya Arrieta</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body style="background:#f4f6f5;">
+
+    <!-- Sidebar overlay (mobile) -->
+    <div class="admin-sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+    <div class="admin-layout">
+
+        <!-- Sidebar -->
+        <aside class="admin-sidebar" id="adminSidebar">
+            <div class="admin-sidebar-header">
+                <h2><span class="text-gold-gradient">Nadya</span> Admin</h2>
+                <p>Panel de gestión</p>
+            </div>
+
+            <nav class="admin-nav">
+                <button class="admin-nav-item active" onclick="showSection('dashboard', this)">
+                    <span class="nav-icon">📊</span> Dashboard
+                </button>
+                <button class="admin-nav-item" onclick="showSection('alumnos', this)">
+                    <span class="nav-icon">👩‍🎓</span> Alumnas
+                </button>
+                <button class="admin-nav-item" onclick="showSection('cursos', this)">
+                    <span class="nav-icon">📚</span> Cursos
+                </button>
+                <button class="admin-nav-item" onclick="showSection('pagos', this)">
+                    <span class="nav-icon">💳</span> Pagos
+                </button>
+                <button class="admin-nav-item" onclick="showSection('configuracion', this)">
+                    <span class="nav-icon">⚙️</span> Configuración
+                </button>
+            </nav>
+
+            <div class="admin-sidebar-footer">
+                <a href="landing3.html">← Volver al sitio</a>
+            </div>
+        </aside>
+
+        <!-- Main -->
+        <main class="admin-main">
+            <div class="admin-topbar">
+                <div style="display:flex; align-items:center; gap:15px;">
+                    <button class="admin-hamburger" onclick="toggleSidebar()">☰</button>
+                    <h1 id="topbarTitle">Dashboard</h1>
+                </div>
+                <div class="admin-topbar-actions">
+                    <input type="text" class="admin-search" placeholder="Buscar alumna, curso..." id="globalSearch"
+                        oninput="handleSearch(this.value)">
+                    <img src="img/nadya-perfil.jpg" alt="Nadya" class="admin-avatar">
+                </div>
+            </div>
+
+            <div class="admin-content">
+
+                <!-- ═══════ DASHBOARD ═══════ -->
+                <div class="admin-section active" id="section-dashboard">
+
+                    <div class="admin-stats">
+                        <div class="admin-stat-card">
+                            <div class="admin-stat-icon green">👩‍🎓</div>
+                            <div class="admin-stat-value" id="statAlumnas">0</div>
+                            <div class="admin-stat-label">Alumnas registradas</div>
+                        </div>
+                        <div class="admin-stat-card">
+                            <div class="admin-stat-icon gold">💰</div>
+                            <div class="admin-stat-value" id="statIngresos">$0</div>
+                            <div class="admin-stat-label">Ingresos totales</div>
+                        </div>
+                        <div class="admin-stat-card">
+                            <div class="admin-stat-icon blue">📚</div>
+                            <div class="admin-stat-value" id="statCursos">9</div>
+                            <div class="admin-stat-label">Cursos activos</div>
+                        </div>
+                        <div class="admin-stat-card">
+                            <div class="admin-stat-icon purple">⏳</div>
+                            <div class="admin-stat-value" id="statPendientes">0</div>
+                            <div class="admin-stat-label">Pagos pendientes</div>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <button class="quick-action-btn" onclick="showSection('alumnos', document.querySelector('[onclick*=alumnos]'))">
+                            ➕ Nueva Alumna
+                        </button>
+                        <button class="quick-action-btn" onclick="showSection('cursos', document.querySelector('[onclick*=cursos]'))">
+                            📖 Gestionar Cursos
+                        </button>
+                        <button class="quick-action-btn" onclick="showSection('pagos', document.querySelector('[onclick*=pagos]'))">
+                            💳 Ver Pagos Pendientes
+                        </button>
+                    </div>
+
+                    <!-- Recent activity -->
+                    <div class="admin-table-wrap">
+                        <div class="admin-table-header">
+                            <h3>Actividad Reciente</h3>
+                        </div>
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Alumna</th>
+                                    <th>Acción</th>
+                                    <th>Curso</th>
+                                    <th>Fecha</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentActivity">
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-cell-avatar">MG</div>
+                                            <div>
+                                                <span class="user-cell-name">María García</span>
+                                                <span class="user-cell-email">maria@email.com</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Registro</td>
+                                    <td>Pack Completo</td>
+                                    <td>26 Abr 2026</td>
+                                    <td><span class="badge badge-pending">Pago pendiente</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-cell-avatar">LP</div>
+                                            <div>
+                                                <span class="user-cell-name">Laura Pérez</span>
+                                                <span class="user-cell-email">laura@email.com</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Compra</td>
+                                    <td>Gel UV</td>
+                                    <td>25 Abr 2026</td>
+                                    <td><span class="badge badge-active">Activo</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-cell-avatar">VR</div>
+                                            <div>
+                                                <span class="user-cell-name">Valentina Ruiz</span>
+                                                <span class="user-cell-email">vale@email.com</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Compra</td>
+                                    <td>Manicuría Rusa</td>
+                                    <td>24 Abr 2026</td>
+                                    <td><span class="badge badge-active">Activo</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ═══════ ALUMNAS ═══════ -->
+                <div class="admin-section" id="section-alumnos">
+                    <div class="admin-stats" style="margin-bottom:20px;">
+                        <div class="admin-stat-card">
+                            <div class="admin-stat-icon green">👩‍🎓</div>
+                            <div class="admin-stat-value">0</div>
+                            <div class="admin-stat-label">Total alumnas</div>
+                        </div>
+                        <div class="admin-stat-card">
+                            <div class="admin-stat-icon gold">🌟</div>
+                            <div class="admin-stat-value">0</div>
+                            <div class="admin-stat-label">Nuevas este mes</div>
+                        </div>
+                        <div class="admin-stat-card">
+                            <div class="admin-stat-icon blue">🌎</div>
+                            <div class="admin-stat-value">—</div>
+                            <div class="admin-stat-label">País más frecuente</div>
+                        </div>
+                    </div>
+
+                    <div class="admin-table-wrap">
+                        <div class="admin-table-header">
+                            <h3>Listado de Alumnas</h3>
+                            <div class="admin-table-actions">
+                                <button class="btn-admin btn-admin-outline">📥 Exportar</button>
+                                <button class="btn-admin btn-admin-primary">➕ Agregar</button>
+                            </div>
+                        </div>
+                        <table class="admin-table" id="alumnosTable">
+                            <thead>
+                                <tr>
+                                    <th>Alumna</th>
+                                    <th>País</th>
+                                    <th>WhatsApp</th>
+                                    <th>Nivel</th>
+                                    <th>Cursos</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-cell-avatar">MG</div>
+                                            <div>
+                                                <span class="user-cell-name">María García</span>
+                                                <span class="user-cell-email">maria@email.com</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>🇦🇷 Argentina</td>
+                                    <td>+54 9 11 1234</td>
+                                    <td>Principiante</td>
+                                    <td>1 de 9</td>
+                                    <td><span class="badge badge-pending">Pendiente</span></td>
+                                    <td>
+                                        <button class="btn-admin btn-admin-outline" style="font-size:0.7rem; padding:5px 10px;">Ver</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-cell-avatar">LP</div>
+                                            <div>
+                                                <span class="user-cell-name">Laura Pérez</span>
+                                                <span class="user-cell-email">laura@email.com</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>🇲🇽 México</td>
+                                    <td>+52 55 5678</td>
+                                    <td>Intermedio</td>
+                                    <td>3 de 9</td>
+                                    <td><span class="badge badge-active">Activa</span></td>
+                                    <td>
+                                        <button class="btn-admin btn-admin-outline" style="font-size:0.7rem; padding:5px 10px;">Ver</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ═══════ CURSOS ═══════ -->
+                <div class="admin-section" id="section-cursos">
+                    <div class="admin-table-wrap">
+                        <div class="admin-table-header">
+                            <h3>Gestión de Cursos</h3>
+                            <div class="admin-table-actions">
+                                <button class="btn-admin btn-admin-primary">➕ Nuevo Curso</button>
+                            </div>
+                        </div>
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Curso</th>
+                                    <th>Precio</th>
+                                    <th>Clases</th>
+                                    <th>Alumnas</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Uñas Esculpidas</strong></td>
+                                    <td>$39 USD</td>
+                                    <td>12 clases</td>
+                                    <td>0</td>
+                                    <td><span class="badge badge-active">Activo</span></td>
+                                    <td>
+                                        <button class="btn-admin btn-admin-outline" style="font-size:0.7rem; padding:5px 10px;">Editar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Capacitación Gel UV</strong></td>
+                                    <td>$45 USD</td>
+                                    <td>10 clases</td>
+                                    <td>0</td>
+                                    <td><span class="badge badge-active">Activo</span></td>
+                                    <td>
+                                        <button class="btn-admin btn-admin-outline" style="font-size:0.7rem; padding:5px 10px;">Editar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Semipermanente Pro</strong></td>
+                                    <td>$29 USD</td>
+                                    <td>8 clases</td>
+                                    <td>0</td>
+                                    <td><span class="badge badge-active">Activo</span></td>
+                                    <td>
+                                        <button class="btn-admin btn-admin-outline" style="font-size:0.7rem; padding:5px 10px;">Editar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Nail Art Floral</strong></td>
+                                    <td>$35 USD</td>
+                                    <td>9 clases</td>
+                                    <td>0</td>
+                                    <td><span class="badge badge-active">Activo</span></td>
+                                    <td>
+                                        <button class="btn-admin btn-admin-outline" style="font-size:0.7rem; padding:5px 10px;">Editar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Manicuría Rusa</strong></td>
+                                    <td>$49 USD</td>
+                                    <td>11 clases</td>
+                                    <td>0</td>
+                                    <td><span class="badge badge-active">Activo</span></td>
+                                    <td>
+                                        <button class="btn-admin btn-admin-outline" style="font-size:0.7rem; padding:5px 10px;">Editar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>3D Art Artist</strong></td>
+                                    <td>$55 USD</td>
+                                    <td>14 clases</td>
+                                    <td>0</td>
+                                    <td><span class="badge badge-active">Activo</span></td>
+                                    <td>
+                                        <button class="btn-admin btn-admin-outline" style="font-size:0.7rem; padding:5px 10px;">Editar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Soft Gel Academy</strong></td>
+                                    <td>$32 USD</td>
+                                    <td>8 clases</td>
+                                    <td>0</td>
+                                    <td><span class="badge badge-active">Activo</span></td>
+                                    <td>
+                                        <button class="btn-admin btn-admin-outline" style="font-size:0.7rem; padding:5px 10px;">Editar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Acrílico Pro</strong></td>
+                                    <td>$59 USD</td>
+                                    <td>16 clases</td>
+                                    <td>0</td>
+                                    <td><span class="badge badge-active">Activo</span></td>
+                                    <td>
+                                        <button class="btn-admin btn-admin-outline" style="font-size:0.7rem; padding:5px 10px;">Editar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Química Técnica</strong></td>
+                                    <td>$25 USD</td>
+                                    <td>6 clases</td>
+                                    <td>0</td>
+                                    <td><span class="badge badge-active">Activo</span></td>
+                                    <td>
+                                        <button class="btn-admin btn-admin-outline" style="font-size:0.7rem; padding:5px 10px;">Editar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ═══════ PAGOS ═══════ -->
+                <div class="admin-section" id="section-pagos">
+                    <div class="admin-stats" style="margin-bottom:20px;">
+                        <div class="admin-stat-card">
+                            <div class="admin-stat-icon gold">⏳</div>
+                            <div class="admin-stat-value">0</div>
+                            <div class="admin-stat-label">Pendientes de aprobación</div>
+                        </div>
+                        <div class="admin-stat-card">
+                            <div class="admin-stat-icon green">✅</div>
+                            <div class="admin-stat-value">0</div>
+                            <div class="admin-stat-label">Aprobados este mes</div>
+                        </div>
+                    </div>
+
+                    <div class="admin-table-wrap">
+                        <div class="admin-table-header">
+                            <h3>Historial de Pagos</h3>
+                            <div class="admin-table-actions">
+                                <button class="btn-admin btn-admin-outline">📥 Exportar</button>
+                            </div>
+                        </div>
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Alumna</th>
+                                    <th>Curso</th>
+                                    <th>Monto</th>
+                                    <th>Fecha</th>
+                                    <th>Comprobante</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="user-cell-avatar">MG</div>
+                                            <div>
+                                                <span class="user-cell-name">María García</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Pack Completo</td>
+                                    <td><strong>$149 USD</strong></td>
+                                    <td>26 Abr 2026</td>
+                                    <td><button class="btn-admin btn-admin-outline" style="font-size:0.7rem; padding:4px 8px;">📎 Ver</button></td>
+                                    <td><span class="badge badge-pending">Pendiente</span></td>
+                                    <td>
+                                        <button class="btn-admin btn-admin-primary" style="font-size:0.7rem; padding:5px 10px;">✓ Aprobar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ═══════ CONFIGURACION ═══════ -->
+                <div class="admin-section" id="section-configuracion">
+                    <div class="admin-table-wrap" style="max-width:600px;">
+                        <div class="admin-table-header">
+                            <h3>Configuración General</h3>
+                        </div>
+                        <div style="padding:25px;">
+                            <div class="login-field" style="margin-bottom:20px;">
+                                <label style="color:#666; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; display:block; margin-bottom:8px;">Nombre de la academia</label>
+                                <input type="text" value="Nadya Arrieta Academy" style="width:100%; padding:12px 16px; border:1px solid rgba(0,0,0,0.12); border-radius:10px; font-family:'Inter',sans-serif; font-size:0.9rem; color:#333; outline:none;">
+                            </div>
+                            <div class="login-field" style="margin-bottom:20px;">
+                                <label style="color:#666; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; display:block; margin-bottom:8px;">WhatsApp de contacto</label>
+                                <input type="text" value="+54 9 11 1234-5678" style="width:100%; padding:12px 16px; border:1px solid rgba(0,0,0,0.12); border-radius:10px; font-family:'Inter',sans-serif; font-size:0.9rem; color:#333; outline:none;">
+                            </div>
+                            <div class="login-field" style="margin-bottom:20px;">
+                                <label style="color:#666; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; display:block; margin-bottom:8px;">Alias bancario</label>
+                                <input type="text" value="NADYA.UÑAS.ARG" style="width:100%; padding:12px 16px; border:1px solid rgba(0,0,0,0.12); border-radius:10px; font-family:'Inter',sans-serif; font-size:0.9rem; color:#333; outline:none;">
+                            </div>
+                            <button class="btn-admin btn-admin-primary" style="margin-top:10px;">Guardar cambios</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Section navigation
+        function showSection(sectionId, navItem) {
+            // Hide all sections
+            document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
+            // Show target
+            const target = document.getElementById('section-' + sectionId);
+            if (target) target.classList.add('active');
+
+            // Update nav active state
+            document.querySelectorAll('.admin-nav-item').forEach(n => n.classList.remove('active'));
+            if (navItem) navItem.classList.add('active');
+
+            // Update topbar title
+            const titles = {
+                dashboard: 'Dashboard',
+                alumnos: 'Alumnas',
+                cursos: 'Cursos',
+                pagos: 'Pagos',
+                configuracion: 'Configuración'
+            };
+            document.getElementById('topbarTitle').textContent = titles[sectionId] || sectionId;
+
+            // Close sidebar on mobile
+            document.getElementById('adminSidebar').classList.remove('open');
+            document.getElementById('sidebarOverlay').classList.remove('active');
+        }
+
+        // Mobile sidebar toggle
+        function toggleSidebar() {
+            const sidebar = document.getElementById('adminSidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('active');
+        }
+
+        // Global search (basic filtering)
+        function handleSearch(query) {
+            const tables = document.querySelectorAll('.admin-table tbody tr');
+            const q = query.toLowerCase();
+            tables.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(q) ? '' : 'none';
+            });
+        }
+
+        // Demo: Animate stat numbers on load
+        function animateStats() {
+            const stats = {
+                statAlumnas: 2,
+                statIngresos: '$194',
+                statCursos: 9,
+                statPendientes: 1
+            };
+            Object.entries(stats).forEach(([id, val]) => {
+                const el = document.getElementById(id);
+                if (el) {
+                    setTimeout(() => {
+                        el.textContent = val;
+                        el.style.transition = 'transform 0.3s';
+                        el.style.transform = 'scale(1.1)';
+                        setTimeout(() => el.style.transform = 'scale(1)', 300);
+                    }, 500);
+                }
+            });
+        }
+
+        // Initialize
+        animateStats();
+    </script>
+
+</body>
+
+</html>

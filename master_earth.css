@@ -1,0 +1,195 @@
+/** 
+ * Nadya Arrieta - Terracotta & Sand Theme
+ * Organic, natural variation of the Master design
+ **/
+
+/* ═══ TERRACOTTA & SAND PALETTE ═══ */
+:root {
+    --terra: #bc6c25;
+    --terra-deep: #8a4f1b;
+    --sand: #dda15e;
+    --sand-light: #e9c88e;
+    --earth-dark: #283618;
+    --earth-mid: #606c38;
+    --cream-warm: #fefae0;
+    --linen: #f5f0e1;
+    --terra-shine: linear-gradient(135deg, #dda15e, #bc6c25, #8a4f1b);
+}
+
+body {
+    background: var(--cream-warm);
+}
+
+.hero-earth {
+    background: linear-gradient(170deg, rgba(40, 54, 24, 0.88), rgba(96, 108, 56, 0.75)), url('img/_JFL4307.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    color: #fff;
+    position: relative;
+}
+
+.hero-earth::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to top, var(--cream-warm), transparent);
+    pointer-events: none;
+}
+
+.bundle-earth {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(221, 161, 94, 0.2);
+    border-radius: 24px;
+    padding: 45px;
+    margin-top: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bundle-earth::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--terra-shine);
+}
+
+.text-earth-gradient {
+    background: linear-gradient(135deg, var(--sand-light), var(--sand), var(--terra));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-earth {
+    background: var(--terra);
+    color: #fff;
+    border: none;
+}
+
+.btn-earth:hover {
+    background: var(--terra-deep);
+}
+
+.badge-earth {
+    background: var(--terra-shine);
+    color: #fff;
+    padding: 5px 14px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.quote-earth {
+    border-left: 4px solid var(--terra);
+    padding-left: 30px;
+    margin: 40px 0;
+}
+
+.section-earth-dark {
+    background: var(--earth-dark);
+    color: #fff;
+}
+
+.section-earth-alt {
+    background: var(--linen);
+}
+
+/* Card overrides */
+.earth-card {
+    background: #fff;
+    border: 1px solid rgba(188, 108, 37, 0.1);
+}
+
+.earth-card:hover {
+    border-color: var(--sand);
+    box-shadow: 0 20px 50px rgba(188, 108, 37, 0.1);
+}
+
+.earth-price {
+    color: var(--terra);
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.earth-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--terra-shine);
+    margin: 20px auto;
+    border-radius: 2px;
+}
+
+/* Organic leaf decoration */
+.earth-leaf {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgba(221, 161, 94, 0.08);
+    border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+    pointer-events: none;
+    animation: leaf-float 12s ease-in-out infinite;
+}
+
+@keyframes leaf-float {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(15deg) scale(1.05); }
+}
+
+/* Nav override */
+nav.scrolled {
+    background: rgba(40, 54, 24, 0.93);
+}
+
+.footer-earth {
+    background: var(--earth-dark);
+    color: #fff;
+}
+
+.footer-earth a.credit {
+    color: var(--sand);
+    text-decoration: none;
+}
+
+/* Features List */
+.features-organic {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.feature-item {
+    text-align: center;
+    flex: 1 1 200px;
+    max-width: 250px;
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.feature-title {
+    font-weight: 700;
+    color: var(--sand);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.feature-desc {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}

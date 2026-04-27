@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión | Nadya Arrieta</title>
+    <meta name="description" content="Accede a tu panel de cursos de la academia Nadya Arrieta.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <!-- Back link -->
+    <a href="landing3.html" class="login-back" id="login-back">
+        ← Volver al sitio
+    </a>
+
+    <div class="login-page">
+        <!-- Animated BG -->
+        <div class="login-bg"></div>
+        <div class="login-orb login-orb-1"></div>
+        <div class="login-orb login-orb-2"></div>
+        <div class="login-orb login-orb-3"></div>
+
+        <!-- Login Card -->
+        <div class="login-card">
+            <div class="login-logo">
+                <h1><span class="text-gold-gradient">Nadya Arrieta</span></h1>
+                <p>Accedé a tu panel de cursos</p>
+            </div>
+
+            <!-- Error / Success messages -->
+            <div class="login-error" id="loginError">
+                <span>⚠</span>
+                <span id="loginErrorMsg">Email o contraseña incorrectos.</span>
+            </div>
+            <div class="login-success" id="loginSuccess">
+                <span>✓</span>
+                <span>¡Bienvenida! Redirigiendo...</span>
+            </div>
+
+            <form id="loginForm" autocomplete="on">
+                <div class="login-field">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" name="email" placeholder="tu@email.com" required
+                        autocomplete="email">
+                </div>
+
+                <div class="login-field">
+                    <label for="loginPassword">Contraseña</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="loginPassword" name="password" placeholder="••••••••" required
+                            autocomplete="current-password" minlength="6">
+                        <button type="button" class="password-toggle" id="passwordToggle" aria-label="Mostrar contraseña">
+                            👁
+                        </button>
+                    </div>
+                </div>
+
+                <div class="login-options">
+                    <label class="login-remember">
+                        <input type="checkbox" id="rememberMe">
+                        Recordarme
+                    </label>
+                    <a href="#" class="login-forgot" id="forgotLink">¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <button type="submit" class="login-submit" id="loginSubmit">
+                    Iniciar Sesión
+                </button>
+            </form>
+
+            <div class="login-divider">o</div>
+
+            <p class="login-register">
+                ¿Aún no tenés cuenta? <a href="registro.html" id="registerLink">Registrate aquí</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Password toggle
+        const toggle = document.getElementById('passwordToggle');
+        const passInput = document.getElementById('loginPassword');
+        toggle.addEventListener('click', () => {
+            const isPassword = passInput.type === 'password';
+            passInput.type = isPassword ? 'text' : 'password';
+            toggle.textContent = isPassword ? '🙈' : '👁';
+        });
+
+        // Form submit (demo behavior)
+        const form = document.getElementById('loginForm');
+        const errorDiv = document.getElementById('loginError');
+        const successDiv = document.getElementById('loginSuccess');
+        const submitBtn = document.getElementById('loginSubmit');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            errorDiv.classList.remove('show');
+            successDiv.classList.remove('show');
+            submitBtn.classList.add('loading');
+            submitBtn.textContent = 'Verificando...';
+
+            // Simulate API call
+            await new Promise(resolve => setTimeout(resolve, 1500));
+
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            // Demo validation — replace with real auth later
+            if (email && password.length >= 6) {
+                successDiv.classList.add('show');
+                submitBtn.textContent = '¡Bienvenida!';
+                // Redirect after brief delay
+                setTimeout(() => {
+                    // window.location.href = 'panel.html';
+                    alert('Redirigir al panel del alumno (aún no implementado)');
+                    submitBtn.classList.remove('loading');
+                    submitBtn.textContent = 'Iniciar Sesión';
+                }, 1200);
+            } else {
+                errorDiv.classList.add('show');
+                submitBtn.classList.remove('loading');
+                submitBtn.textContent = 'Iniciar Sesión';
+            }
+        });
+
+        // Focus animation on inputs
+        document.querySelectorAll('.login-field input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.closest('.login-field').style.transform = 'translateX(3px)';
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.closest('.login-field').style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+
+</body>
+
+</html>
